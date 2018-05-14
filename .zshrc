@@ -2,6 +2,7 @@
 alias cdgit="cd ~/Documents/Git"
 alias myip="curl http://ipecho.net/plain; echo"
 alias record="LC_CTYPE=en_US.UTF-8 asciinema"
+alias openhtml="pbpaste > ~/Desktop/html.html ; open ~/Desktop/html.html"
 
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH

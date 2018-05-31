@@ -1,0 +1,7 @@
+# This file is loaded by iTerm2 when starting to overwrite .zshrc
+# As .zshrc is loaded by VS Code, and does not support the char symbols...
+# The command used by iTerm is: `source ~/.zsh-spaceship; clear`
+
+# Spaceship ZSH settings
+SPACESHIP_PROMPT_ADD_NEWLINE="true"
+SPACESHIP_CHAR_SYMBOL="\uf121 \uf061 "

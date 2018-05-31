@@ -3,9 +3,11 @@ alias cdgit="cd ~/Documents/Git"
 alias myip="curl http://ipecho.net/plain; echo"
 alias record="LC_CTYPE=en_US.UTF-8 asciinema"
 alias openhtml="pbpaste > ~/Desktop/html.html ; open ~/Desktop/html.html"
+alias composer="~/composer.phar"
+alias lls="colorls --sort-dirs --long --git-status"
+alias lss="colorls --sort-dirs --report --git-status"
+alias lsss="colorls --tree"
 
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
 #export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 source ~/.profile
@@ -115,3 +117,24 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/lucianonooijen/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/lucianonooijen/node_modules/tabtab/.completions/sls.zsh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
+# Spaceship ZSH settings
+SPACESHIP_PROMPT_ADD_NEWLINE="false"
+SPACESHIP_DIR_COLOR="blue"
+SPACESHIP_CHAR_COLOR_SUCCESS="green"
+SPACESHIP_CHAR_SYMBOL="✏️ 👉  "
+SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_HOST_PREFIX="at "
+SPACESHIP_DIR_PREFIX="in "
+SPACESHIP_PACKAGE_COLOR="yellow"
+SPACESHIP_USER_SHOW="always"
+SPACESHIP_USER_COLOR="yellow"
+
+# colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
+

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir ~/.vim/bundle
+
 cd ~
 cd .vim
 cd bundle

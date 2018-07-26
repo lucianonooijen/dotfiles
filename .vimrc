@@ -10,6 +10,7 @@ syntax on
 set noshowmode
 set encoding=utf-8
 set number
+set relativenumber
 set wildmenu
 set showcmd
 set hlsearch
@@ -29,7 +30,7 @@ set t_Co=256
 set foldenable
 
 " Set word count
-let g:airline#extensions#wordcount#enabled = 1  
+let g:airline#extensions#wordcount#enabled = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
@@ -73,9 +74,9 @@ let NERDTreeShowHidden=1
 let g:syntastic_javascript_checkers=['eslint']
 
 " Js Beautify
-map <c-b> :call JsBeautify()<cr>
-autocmd FileType javascript noremap <buffer>  <c-b> :call JsBeautify()<cr>
-autocmd FileType json noremap <buffer> <c-b> :call JsonBeautify()<cr>
-autocmd FileType jsx noremap <buffer> <c-b> :call JsxBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-b> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-b> :call CSSBeautify()<cr>
+map <c-z> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-z> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-z> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <c-z> :call JsxBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-z> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-z> :call CSSBeautify()<cr>

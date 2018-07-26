@@ -7,6 +7,7 @@ alias composer="~/composer.phar"
 alias lls="colorls --sort-dirs --long --git-status"
 alias lss="colorls --sort-dirs --report --git-status"
 alias lsss="colorls --tree"
+alias listen="tail -f"
 
 #export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH

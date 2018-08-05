@@ -1,4 +1,5 @@
-# Shit from bash profile
+# Custom aliasses
+alias please="sudo"
 alias cdgit="cd ~/Documents/Git"
 alias myip="curl http://ipecho.net/plain; echo"
 alias record="LC_CTYPE=en_US.UTF-8 asciinema"
@@ -8,6 +9,25 @@ alias lls="colorls --sort-dirs --long --git-status"
 alias lss="colorls --sort-dirs --report --git-status"
 alias lsss="colorls --tree"
 alias listen="tail -f"
+alias sshkey="cat ~/.ssh/id_rsa.pub"
+
+# Aliasses for Docker Compose
+alias dco="docker-compose"
+alias dcup="docker-compose up"
+alias dcupfr="docker-compose up --force-recreate"
+alias dcdown="docker-compose down"
+alias dcrestart="docker-compose restart"
+alias dclogs="docker-compose logs"
+alias dclogsf="docker-compose logs -f"
+alias dcps="docker-compose ps"
+alias dcexec="docker-compose exec"
+alias dcpull="docker-compose pull"
+alias dcrm="docker-compose rm"
+alias dcrun="docker-compose run"
+alias dcbuild="docker-compose build"
+alias dcstart="docker-compose start"
+alias dcstop="docker-compose stop"
+
 
 #export PATH=/Applications/MAMP/bin/php/php7.1.8/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH

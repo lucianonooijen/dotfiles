@@ -1,0 +1,199 @@
+# Shortcuts
+alias please="sudo"
+alias s="sudo"
+alias v="vim"
+alias p="pacman"
+alias r="ranger"
+alias sv="sudo vim"
+alias sp="sudo pacman"
+alias sr="sudo ranger"
+alias ap="ansible-playbook"
+alias ka="killall"
+alias reloadrc="source ~/.generalrc"
+alias vrc="vim ~/.generalrc && source ~/.generalrc; clear"
+
+# Custom aliasses
+alias myip="curl http://ipecho.net/plain; echo"
+alias record="LC_CTYPE=en_US.UTF-8 asciinema"
+alias sshkey="cat ~/.ssh/id_rsa.pub"
+alias listen="tail -f"
+
+# Adding color
+alias ls='ls -hN --color=auto --group-directories-first'
+alias grep="grep --color=auto" # Color grep - highlight desired sequence.
+alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.
+
+# Yarn
+alias y="yarn"
+alias yi="yarn init"
+alias yc="yarn check && yarn check --integrity && yarn check --verify-tree"
+alias ya="yarn add"
+alias yad="yarn add --dev"
+alias yap="yarn add --peer"
+alias yao="yarn add --optional"
+alias yu="yarn upgrade"
+alias yrm="yarn remove"
+alias yg="yarn global"
+alias yga="yarn global add"
+alias ygl="yarn global list"
+alias ygr="yarb gloval remove"
+alias yr="yarn run"
+alias yrd="yarn run dev"
+alias yrs="yarn run start"
+alias yrb="yarn run build"
+alias yre="yarn run export"
+alias yrl="yarn run lint"
+alias yrt="yarn run test"
+alias yrtw="yarn run test:watch"
+alias ygenlic="yarn licenses generate-disclaimer"
+
+# Exa
+alias els="exa --group --long --header --git"
+
+# Code editor aliasses
+alias c="code"
+alias ccd="code ."
+
+# Htop
+alias htopcpu="htop --sort-key=PERCENT_CPU"
+alias htopmem="htop --sort-key=PERCENT_MEM"
+
+# System Maintainence
+alias mw="~/.config/mutt/mutt-wizard.sh"
+alias muttwizard="~/.config/mutt/mutt-wizard.sh"
+alias sdn="sudo shutdown now"
+alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
+alias pi="bash ~/.larbs/wizard/wizard.sh"
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Custom functions
+function mkdircd() { mkdir $1 && cd $1 }
+
+# Folder navigation
+alias cdh="cd ~"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# Git
+alias g="git"
+alias gst="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias ga.="git add ."
+alias gapa="git add --patch"
+alias gb="git branch"
+alias gc="git commit -v"
+alias gcm="git commit -m"
+alias gcb="git checkout -b"
+alias gco="git checkout"
+alias gcp="git cherry-pick"
+alias gd="git diff"
+alias gm="git merge"
+alias gf="git fetch"
+alias gl="git pull"
+alias gp="git push"
+# alias ggp="git push origin $(git branch | grep \* | cut -d ' ' -f2)"
+alias glg="git log --stat --max-count = 10"
+alias glog="git log --oneline --decorate --color --graph"
+alias gloga="git log --decorate --color --graph --all"
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias gsta="git stash"
+alias gsu="git submodule update"
+alias gwch="git whatchanged -p --abbrev-commit --pretty = medium"
+
+# Tmux
+alias ta="tmux attach -t"
+alias tad="tmux attach -d -t"
+alias ts="tmux new-session -s"
+alias tl="tmux list-sessions"
+alias tksv="tmux kill-server"
+alias tkss="tmux kill-session -t"
+
+# Systemctl
+alias sc-status="systemctl status"
+alias sc-show="systemctl show"
+alias sc-start="systemctl start"
+alias sc-stop="systemctl stop"
+alias sc-restart="systemctl restart"
+alias sc-enable="systemctl enable"
+alias sc-disable="systemctl disable"
+
+# Systemctl with sudo
+alias ssc-status="sudo systemctl status"
+alias ssc-show="sudo systemctl show"
+alias ssc-start="sudo systemctl start"
+alias ssc-stop="sudo systemctl stop"
+alias ssc-restart="sudo systemctl restart"
+alias ssc-enable="sudo systemctl enable"
+alias ssc-disable="sudo systemctl disable"
+
+# Aliasses for Docker Compose
+alias dco="docker-compose"
+alias dcup="docker-compose up"
+alias dcupfr="docker-compose up --force-recreate"
+alias dcuclean="docker-composer up --remove-orphans"
+alias dcdown="docker-compose down"
+alias dcrestart="docker-compose restart"
+alias dclogs="docker-compose logs"
+alias dclogsf="docker-compose logs -f"
+alias dcps="docker-compose ps"
+alias dcexec="docker-compose exec"
+alias dcpull="docker-compose pull"
+alias dcrm="docker-compose rm"
+alias dcrun="docker-compose run"
+alias dcbuild="docker-compose build"
+alias dcstart="docker-compose start"
+alias dcstop="docker-compose stop"
+
+# Docker aliases and functions
+alias dm='docker-machine'
+alias dmssh='docker-machine ssh'
+alias dk='docker'
+alias dki='docker images'
+alias dks='docker service'
+alias dkrm='docker rm'
+alias dklogs='docker logs'
+alias dklogsf='docker logs -f'
+alias dkflush='docker rm `docker ps --no-trunc -aq`'
+alias dkflush2='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+alias dkstats='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
+alias dkps="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+dkln() { docker logs -f `docker ps | grep $1 | awk '{print $1}'` }
+dkprune() { docker system prune -af }
+dktop() { docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}  {{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}" }
+dke() { docker exec -it $1 /bin/sh }
+dkexe() { docker exec -it $1 $2 }
+dkstate() { docker inspect $1 | jq .[0].State }
+dkstatsgrep() {
+  if [ $# -eq 0 ] then docker stats --no-stream; else docker stats --no-stream | grep $1; fi
+}
+dkreboot() {
+  osascript -e 'quit app "Docker"'
+  countdown 2
+  open -a Docker
+  echo "Restarting Docker engine"
+  countdown 120
+}
+dkclean() {
+  docker rm $(docker ps --all -q -f status=exited)
+  docker volume rm $(docker volume ls -qf dangling=true)
+}
+dksb() {
+  docker service scale $1=0
+  sleep 2
+  docker service scale $1=$2
+}
+mongo() {
+  mongoLabel=`docker ps | grep mongo | awk '{print $NF}'`
+  docker exec -it $mongoLabel mongo "$@"
+}
+redis() {
+  redisLabel=`docker ps | grep redis | awk '{print $NF}'`
+  docker exec -it $redisLabel redis-cli
+}

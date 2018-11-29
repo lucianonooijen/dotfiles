@@ -4,14 +4,17 @@ My personal dotfiles repo
 
 ## Installation
 
-Clone this repo to your `~` directory, restart your terminal and done
+Take the files you want and put them in your `~` folder
 
-## Dependencies
+## Arch/voidrice
 
-* Zsh
-* Oh-my-zsh
+To overwrite `voidrice` files, take the following files:
+
+* .generalrc
+* .zshrc
+* .bashrc
+* .vim folder (merge with existing files)
 
 ### Licence
 
 GPL-3.0
-

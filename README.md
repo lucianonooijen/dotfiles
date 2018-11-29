@@ -13,7 +13,9 @@ To overwrite `voidrice` files, take the following files:
 * .generalrc
 * .zshrc
 * .bashrc
+* .vimrc
 * .vim folder (merge with existing files)
+* .oh-my-zsh folder
 
 ### Licence
 

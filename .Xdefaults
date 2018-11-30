@@ -1,6 +1,6 @@
 *.font: Liberation Mono:pixelsize=24:antialias=true:autohint=true;
-font pango:DejaVu Sans Mono 24
-Xft.dpi: 192
+font pango:DejaVu Sans Mono 18
+Xft.dpi: 164
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull

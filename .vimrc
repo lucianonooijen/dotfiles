@@ -8,6 +8,7 @@ Plug 'LukeSmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'dylanaraps/wal.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " Load Pathogen for plugins:
@@ -64,7 +65,7 @@ call plug#end()
 
 " Syntastic
     set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
+"    set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
@@ -75,10 +76,10 @@ call plug#end()
 
 " Nerdtree
     " autocmd vimenter * NERDTree
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+"    autocmd StdinReadPre * let s:std_in=1
+"    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"    autocmd StdinReadPre * let s:std_in=1
+"    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
     map <C-t> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
     " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

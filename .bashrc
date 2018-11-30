@@ -1,5 +1,5 @@
 stty -ixon # Disable ctrl-s and ctrl-q.
-shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
+#shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
 HISTSIZE= HISTFILESIZE= # Infinite history.
 
 # Setting Bash prompt. Capitalizes username and host if root user (my root user uses this same config file).
@@ -11,3 +11,8 @@ fi
 export GPG_TTY=$(tty)
 
 source ~/.generalrc
+source /home/luciano/.shortcuts
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -1,3 +1,7 @@
+# Arch
+alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
+alias reloadx="xrdb ~/.Xdefaults"
+
 # Shortcuts
 alias please="sudo"
 alias s="sudo"
@@ -65,13 +69,8 @@ alias sdn="sudo shutdown now"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 alias pi="bash ~/.larbs/wizard/wizard.sh"
 
-# Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Custom functions
-function mkdircd() { mkdir $1 && cd $1 }
+# function mkdircd() { mkdir $1 && cd $1 }
 
 # Folder navigation
 alias cdh="cd ~"
@@ -164,15 +163,15 @@ alias dkflush='docker rm `docker ps --no-trunc -aq`'
 alias dkflush2='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias dkstats='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
 alias dkps="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
-dkln() { docker logs -f `docker ps | grep $1 | awk '{print $1}'` }
-dkprune() { docker system prune -af }
-dktop() { docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}  {{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}" }
-dke() { docker exec -it $1 /bin/sh }
-dkexe() { docker exec -it $1 $2 }
-dkstate() { docker inspect $1 | jq .[0].State }
-dkstatsgrep() {
-  if [ $# -eq 0 ] then docker stats --no-stream; else docker stats --no-stream | grep $1; fi
-}
+# dkln() { docker logs -f `docker ps | grep $1 | awk '{print $1}'` }
+# dkprune() { docker system prune -af }
+# dktop() { docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}  {{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}" }
+# dke() { docker exec -it $1 /bin/sh }
+# dkexe() { docker exec -it $1 $2 }
+# dkstate() { docker inspect $1 | jq .[0].State }
+# dkstatsgrep() {
+#   if [ $# -eq 0 ] then docker stats --no-stream; else docker stats --no-stream | grep $1; fi
+# }
 dkreboot() {
   osascript -e 'quit app "Docker"'
   countdown 2
@@ -197,3 +196,4 @@ redis() {
   redisLabel=`docker ps | grep redis | awk '{print $NF}'`
   docker exec -it $redisLabel redis-cli
 }
+

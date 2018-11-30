@@ -1,5 +1,5 @@
-*.font: Liberation Mono:pixelsize=28:antialias=true:autohint=true;
-font pango:DejaVu Sans Mono 18
+*.font: Liberation Mono:pixelsize=24:antialias=true:autohint=true;
+font pango:DejaVu Sans Mono 24
 Xft.dpi: 192
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -11,33 +11,46 @@ Xft.rgba: rgb
 *foreground: #00cc00
 *foreground_bold: #a8a19f
 *cursor: #a8a19f
-*background:       #1b1918
+*background: #1b1918
 !!*background: rgba(0, 0, 0, .7)
 
-!! black
-*color0: #1b1918
-*color8: #766e6b
-!! red
-*color1: #f22c40
-*color9: #f22c40
-!! green
-*color2: #5ab738
-*color10: #5ab738
-!! yellow
-*color3: #d5911a
-*color11: #d5911a
-!! blue
-*color4: #407ee7
-*color12: #407ee7
-!! magenta
-*color5: #6666ea
-*color13: #6666ea
-!! cyan
-*color6: #00ad9c
-*color14: #00ad9c
-!! white
-*color7: #a8a19f
-*color15: #f1efee
+
+!! Text color
+*color12: #ffffff
+
+!! Directory color
+*color4: #ae81ff
+
+!! Green (username)
+*color2: #a6e22d
+*color10: #a6e22d
+
+!! Reds (git)
+*color1: #e73c50
+*color9: #e73c50
+
+!! Blacks
+*color0: #1b1b1b
+*color8: #767676
+
+!! Orange
+*color3: #fd9720
+
+!! Yellow
+*color11: #e6dB74
+
+!! Magenta
+*color5: #f92772
+*color13: #f92772
+
+!! Cyan
+*color6: #66d9ef
+*color14: #66d9ef
+
+!! Whites and grays
+*color7: #75715e
+*color15: #fe8e8e
+
 
 URxvt.intensityStyles:	false
 URxvt.background:       [70]#000000

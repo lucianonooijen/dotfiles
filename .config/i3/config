@@ -112,6 +112,13 @@ bar {
 	modifier None
 }
 
+# #---Luciano Bindings---# #
+bindsym $mod+Control+c 		exec --no-startup-id code
+bindsym $mod+Control+m      exec --no-startup-id mattermost-desktop
+bindsym $mod+Control+s      exec --no-startup-id slack
+bindsym $mod+Control+g      exec --no-startup-id gitkraken
+bindsym $mod+Control+d      exec --no-startup-id dbeaver
+
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
@@ -215,7 +222,8 @@ bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id botto
 bindsym $mod+n			exec $term -e newspod && pkill -RTMIN+6 i3blocks
 ##bindsym $mod+Shift+n
 
-bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
+bindsym $mod+m 			exec --no-startup-id spotify
+#bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
 bindsym $mod+Shift+m		exec --no-startup-id lmc mute
 
 # #---Workspace Bindings---# #

@@ -57,6 +57,14 @@ call plug#end()
     set shiftwidth=4
     set expandtab
 
+" Lightline
+if !has('gui_running')
+    set t_Co=256
+endif
+let g:lightline = {
+    \ 'colorscheme': 'powerline',
+    \ }
+
 " Prettier
     let g:prettier#config#tab_width = 4
     let g:prettier#config#single_quote = 'true'

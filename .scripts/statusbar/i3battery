@@ -15,6 +15,8 @@ esac
 capacity=$(acpi | awk -F '[^0-9]*' '{print $3}') || exit
 status=$(cat /sys/class/power_supply/"$1"/status)
 
+remaining=$(acpi | awk '{print $5}' | cut -d: -f1-2)
+
 if [ "$capacity" -ge 80 ]; then
 	color="#00FF00"
 elif [ "$capacity" -ge 60 ]; then
@@ -34,5 +36,5 @@ fi
 
 #printf "<span color='%s'>%s</span>" "$color" "$capacity"
 #echo $capacity
-printf "<span color='%s'>%s%s%s</span>" "$color" "$(echo "$status" | sed -e "s/,//g;s/Discharging/🔋/;s/Charging/🔌/;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')"
+printf "<span color='%s'>%s%s%s (%s)</span>" "$color" "$(echo "$status" | sed -e "s/,//g;s/Discharging/🔋/;s/Charging/🔌/;s/Unknown/♻️/;s/Full/⚡/;s/ 0*/ /g;s/ :/ /g")" "$warn" "$(echo "$capacity" | sed -e 's/$/%/')" "$remaining"
 

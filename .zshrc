@@ -1,6 +1,5 @@
 source ~/.generalrc
 source ~/.profile
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -44,5 +43,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # colorls
 # source $(dirname $(gem which colorls))/tab_complete.sh
+
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PAGER="most"

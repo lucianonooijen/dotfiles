@@ -1,20 +1,40 @@
 let mapleader =" "
 
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/goyo.vim'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'jreybert/vimagit'
-Plug 'LukeSmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
-Plug 'dylanaraps/wal.vim'
-Plug 'terryma/vim-multiple-cursors'
+
+" General
+Plug 'editorconfig/editorconfig-vim'
+Plug '/usr/local/opt/fzf'
+
+" Layout
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
+
+" Functionality and layout additions
+Plug 'junegunn/goyo.vim' " Distraction free writing
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-syntastic/syntastic'
+Plug 'jreybert/vimagit' " :Magit
+
+" Syntax
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'LukeSmithxyz/vimling'
+Plug 'elixir-editors/vim-elixir'
+
+" Javascript
+Plug 'pangloss/vim-javascript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+
 call plug#end()
 
 " Load Pathogen for plugins:
     execute pathogen#infect()
     execute pathogen#helptags()
-
 
 " General stuff
     " colorscheme monokai_pro
@@ -49,6 +69,10 @@ call plug#end()
     let g:airline_left_sep=''
     let g:airline_right_sep=''
 
+" Set word wrap
+    set formatoptions=1
+    set lbr
+
 " 4 space indent
     filetype plugin indent on
     set smartindent
@@ -64,6 +88,10 @@ endif
 let g:lightline = {
     \ 'colorscheme': 'powerline',
     \ }
+
+" Key remaps
+    nnoremap F :FZF<cr>
+    nnoremap ! :!
 
 " Prettier
     let g:prettier#config#tab_width = 4
@@ -137,7 +165,7 @@ let g:lightline = {
     map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
 " Compile document
-    map <leader>c :!compiler <c-r>%<CR>
+    map <leader>C :!compiler <c-r>%<CR>
 
 "For saving view folds:
     "au BufWinLeave * mkview
@@ -203,10 +231,10 @@ let g:lightline = {
     nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
-    inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-    vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-    map <Space><Tab> <Esc>/<++><Enter>"_c4l
-    inoremap ;gui <++>
+    "inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+    "vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+    "map <Space><Tab> <Esc>/<++><Enter>"_c4l
+    "inoremap ;gui <++>
 
 " For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)
     inoremap jw <Esc>

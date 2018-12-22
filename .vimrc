@@ -17,11 +17,11 @@ Plug 'junegunn/goyo.vim' " Distraction free writing
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
 Plug 'jreybert/vimagit' " :Magit
+Plug 'lucianonooijen/vimling' "<leader><leader>d will toggle dead keys
 
 " Syntax
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'LukeSmithxyz/vimling'
 Plug 'elixir-editors/vim-elixir'
 
 " Javascript

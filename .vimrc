@@ -11,24 +11,35 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
-
-" Functionality and layout additions
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim' " Distraction free writing
+
+" Functionality  additions
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
-Plug 'vim-syntastic/syntastic'
 Plug 'jreybert/vimagit' " :Magit
 Plug 'lucianonooijen/vimling' "<leader><leader>d will toggle dead keys
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
+Plug 'terryma/vim-expand-region'
 
 " Syntax
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+" TODO: Get working Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'maksimr/vim-jsbeautify'
+
+" Archive to maybe use later (again)
+" Plug 'vim-syntastic/syntastic'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 
 call plug#end()
 
@@ -81,17 +92,37 @@ call plug#end()
     set shiftwidth=4
     set expandtab
 
+" Indicate line 80 and beyond 120
+    let &colorcolumn="80,".join(range(120,999),",")
+
 " Lightline
 if !has('gui_running')
     set t_Co=256
 endif
 let g:lightline = {
     \ 'colorscheme': 'powerline',
+    \ 'component_function': {
+    \   'cocstatus': 'coc#status'
+    \ },
     \ }
 
+" Auto close brackets
+    inoremap " ""<left>
+    inoremap ' ''<left>
+    inoremap ` ``<left>
+    inoremap ( ()<left>
+    inoremap (<CR> (<CR>)<ESC>O
+    inoremap [ []<left>
+    inoremap [<CR> [<CR>]<ESC>O
+    inoremap { {}<left>
+    inoremap {<CR> {<CR>}<ESC>O
+
 " Key remaps
+    map <C-n> :NERDTreeToggle<CR>
     nnoremap F :FZF<cr>
     nnoremap ! :!
+    map <c-j> <Plug>(expand_region_expand)
+    map <c-k> <Plug>(expand_region_shrink)
 
 " Prettier
     let g:prettier#config#tab_width = 4
@@ -99,30 +130,14 @@ let g:lightline = {
     let g:prettier#config#trailing_comma = 'all'
     let g:prettier#config#jsx_bracket_same_line = 'true'
 
-" Syntastic
-    set statusline+=%#warningmsg#
-"    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_javascript_checkers = ['eslint']
-    let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+" Conquer of Completion (COC)
+    vmap <leader>f <Plug>(coc-format-selected)
+
+" Youcompleteme
+    let g:loaded_youcompleteme = 1 " Disable by default
 
 " Nerdtree
-    " autocmd vimenter * NERDTree
-"    autocmd StdinReadPre * let s:std_in=1
-"    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"    autocmd StdinReadPre * let s:std_in=1
-"    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-    map <C-t> :NERDTreeToggle<CR>
     let NERDTreeShowHidden=1
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Misc plugin settings
-    " let g:indent_guides_enable_on_vim_startup = 1
-    " let g:syntastic_javascript_checkers=['eslint']
 
 " Js Beautify
     map <c-z> :call JsBeautify()<cr>
@@ -167,16 +182,11 @@ let g:lightline = {
 " Compile document
     map <leader>C :!compiler <c-r>%<CR>
 
-"For saving view folds:
-    "au BufWinLeave * mkview
-    "au BufWinEnter * silent loadview
-
 " Interpret .md files, etc. as .markdown
     let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " Make calcurse notes markdown compatible:
     autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-
 
 " groff files automatically detected
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=grof
@@ -188,11 +198,7 @@ let g:lightline = {
     map <F3> :!wc <C-R>%<CR>
 
 " Spell-check set to F6:
-    map <F6> :setlocal spell! spelllang=en_us,es<CR>
-
-" Toggle DeadKeys set to F7 (for accent marks):
-    " so ~/.vim/luke/deadkeys.vim
-    " nm <F7> :call ToggleDeadKeys()<CR>
+    map <F6> :setlocal spell! spelllang=en_us,nl<CR>
 
 " Use urlview to choose and open a url:
     :noremap <leader>u :w<Home>silent <End> !urlview<CR>
@@ -231,9 +237,9 @@ let g:lightline = {
     nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
-    "inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-    "vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-    "map <Space><Tab> <Esc>/<++><Enter>"_c4l
+    "inoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
+    "vnoremap <leader> <Esc>/<++><Enter>"_c4l
+    "map <leader><Tab> <Esc>/<++><Enter>"_c4l
     "inoremap ;gui <++>
 
 " For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)
@@ -290,11 +296,6 @@ let g:lightline = {
     autocmd Filetype rmd inoremap ;r ```{r}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ;p ```{python}<CR>```<CR><CR><esc>2kO
 
-""".xml
-    "autocmd FileType xml inoremap ;e <item><Enter><title><++></title><Enter><pubDate><Esc>:put<Space>=strftime('%c')<Enter>A</pubDate><Enter><link><++></link><Enter><description><++></description><Enter></item>
-    autocmd FileType xml inoremap ;e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
-    autocmd FileType xml inoremap ;a <a href="<++>"><++></a><++><Esc>F"ci"
-
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
 
@@ -304,3 +305,68 @@ vnoremap L >gv
 vnoremap H <gv
 
 map <enter><enter> yi[:e <c-r>"<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""" COC """""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set hidden
+set cmdheight=2
+set updatetime=100
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <c-space> coc#refresh()
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <leader>rn <Plug>(coc-rename)
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+

@@ -32,7 +32,6 @@ Plug 'slashmili/alchemist.vim'
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-" TODO: Get working Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
@@ -40,6 +39,7 @@ Plug 'maksimr/vim-jsbeautify'
 " Archive to maybe use later (again)
 " Plug 'vim-syntastic/syntastic'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 call plug#end()
 
@@ -111,11 +111,16 @@ let g:lightline = {
     inoremap ' ''<left>
     inoremap ` ``<left>
     inoremap ( ()<left>
+    inoremap () ()
     inoremap (<CR> (<CR>)<ESC>O
     inoremap [ []<left>
     inoremap [<CR> [<CR>]<ESC>O
     inoremap { {}<left>
     inoremap {<CR> {<CR>}<ESC>O
+
+" Copy to and paste from clipboard
+    noremap <Leader>y "+y
+    noremap <Leader>p "+p
 
 " Key remaps
     map <C-n> :NERDTreeToggle<CR>
@@ -239,8 +244,7 @@ let g:lightline = {
 " Navigating with guides
     "inoremap <leader><Tab> <Esc>/<++><Enter>"_c4l
     "vnoremap <leader> <Esc>/<++><Enter>"_c4l
-    "map <leader><Tab> <Esc>/<++><Enter>"_c4l
-    "inoremap ;gui <++>
+    "map <leader><Tab> <Esc>/<++><Enter>"_c4l "inoremap ;gui <++>
 
 " For normal mode when in terminals (in X I have caps mapped to esc, this replaces it when I don't have X)
     inoremap jw <Esc>
@@ -296,77 +300,13 @@ let g:lightline = {
     autocmd Filetype rmd inoremap ;r ```{r}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ;p ```{python}<CR>```<CR><CR><esc>2kO
 
-vmap <expr> ++ VMATH_YankAndAnalyse()
-nmap ++ vip++
+    vmap <expr> ++ VMATH_YankAndAnalyse()
+    nmap ++ vip++
 
-vnoremap K xkP`[V`]
-vnoremap J xp`[V`]
-vnoremap L >gv
-vnoremap H <gv
+    vnoremap K xkP`[V`]
+    vnoremap J xp`[V`]
+    vnoremap L >gv
+    vnoremap H <gv
 
-map <enter><enter> yi[:e <c-r>"<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""" COC """""""""""""""""""""""""""""""""
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set hidden
-set cmdheight=2
-set updatetime=100
-set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <c-space> coc#refresh()
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-nmap <leader>rn <Plug>(coc-rename)
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-vmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-function! s:show_documentation()
-  if &filetype == 'vim'
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-command! -nargs=0 Format :call CocAction('format')
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+    map <enter><enter> yi[:e <c-r>"<cr>
 

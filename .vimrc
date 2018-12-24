@@ -122,6 +122,16 @@ let g:lightline = {
     noremap <Leader>y "+y
     noremap <Leader>p "+p
 
+" Disable ex-mode
+    nnoremap Q <nop>
+
+" Keys for tab management
+    nnoremap <C-t> :tabnew<cr>
+    nnoremap <Leader><Left> :tabprevious<cr>
+    nnoremap <Leader><Right> :tabnext<cr>
+    nnoremap <Leader><Up> :tabfirst<cr>
+    nnoremap <Leader><Down> :tablast<cr>
+
 " Key remaps
     map <C-n> :NERDTreeToggle<CR>
     nnoremap F :FZF<cr>
@@ -182,7 +192,7 @@ let g:lightline = {
     nnoremap S :%s//g<Left><Left>
 
 " Open corresponding.pdf
-    map <leader>p :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
+    map <leader>P :!mupdf <c-r>%<backspace><backspace><backspace>pdf &<CR><CR>
 
 " Compile document
     map <leader>C :!compiler <c-r>%<CR>
@@ -209,7 +219,7 @@ let g:lightline = {
     :noremap <leader>u :w<Home>silent <End> !urlview<CR>
 
 " Copy selected text to system clipboard (requires xclip installed):
-    vnoremap <C-c> "cy<esc>:!echo -n '<C-R>c' \|<space>xclip<CR><enter>
+    " vnoremap <C-c> "cy<esc>:!echo -n '<C-R>c' \|<space>xclip<CR><enter>
 
 " Goyo plugin makes text more readable when writing prose:
     map <F10> :Goyo<CR>
@@ -237,9 +247,6 @@ let g:lightline = {
 
 " Disables automatic commenting on newline:
     autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" C-T for new tab
-    nnoremap <C-t> :tabnew<cr>
 
 " Navigating with guides
     "inoremap <leader><Tab> <Esc>/<++><Enter>"_c4l

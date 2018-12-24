@@ -118,6 +118,7 @@ bindsym $mod+Control+m      exec --no-startup-id mattermost-desktop
 bindsym $mod+Control+s      exec --no-startup-id slack
 bindsym $mod+Control+g      exec --no-startup-id gitkraken
 bindsym $mod+Control+d      exec --no-startup-id dbeaver
+bindsym $mod+Control+w      exec --no-startup-id chromium
 
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
@@ -308,7 +309,8 @@ bindsym $mod+F8		exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
 bindsym $mod+F9		exec --no-startup-id dmenumount
 bindsym $mod+F10	exec --no-startup-id dmenuumount
 bindsym $mod+F11	exec --no-startup-id ducksearch
-bindsym $mod+F12	exec $term -e nmtui
+bindsym $mod+F12	exec $term -e vim ~/todo.md && exit 0
+#bindsym $mod+F12	exec $term -e nmtui
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		focus left
@@ -429,4 +431,4 @@ bindsym XF86Documents		exec $term -e ranger ~/Documents
 ##bindsym XF86Battery		exec
 ##bindsym XF86Bluetooth		exec
 bindsym XF86WLAN		exec $netrefresh
-exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000
+#exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000

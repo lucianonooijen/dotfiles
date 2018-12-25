@@ -9,6 +9,7 @@ Plug '/usr/local/opt/fzf'
 " Layout
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'

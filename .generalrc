@@ -13,6 +13,7 @@ alias vvim="vim ~/.vimrc"
 alias glr="gitlab-runner"
 alias plate="java -jar ~/plate-themetool.1.3.jar"
 alias todo="vim ~/todo.md"
+alias aur="makepkg -si"
 
 # Folder aliasses
 alias cdh="cd ~"
@@ -124,12 +125,13 @@ alias gsu="git submodule update"
 alias gwch="git whatchanged -p --abbrev-commit --pretty = medium"
 
 # Tmux
+alias t="tmux"
 alias ta="tmux attach -t"
 alias tad="tmux attach -d -t"
 alias ts="tmux new-session -s"
-alias tl="tmux list-sessions"
+alias tls="tmux list-sessions"
 alias tksv="tmux kill-server"
-alias tkss="tmux kill-session -t"
+alias tks="tmux kill-session -t"
 
 # Systemctl
 alias sc="systemctl"
@@ -223,4 +225,14 @@ export FZF_DEFAULT_OPTS="--color=16 --preview '(highlight -O ansi -l {} 2> /dev/
 alias f="fzf"
 vf() {
     v $(f)
+}
+
+# List colors
+256colors() {
+    for i in {0..255};
+        do printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i;
+        if ! (( ($i + 1 ) % 8 ));
+            then echo;
+        fi;
+    done
 }

@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if [ ! -e /sys/class/backlight/gmux_backlight ]; then
+    modprobe apple-gmux
+fi
+
+STEP=100
+BL_FILE=/sys/class/backlight/gmux_backlight/brightness
+VALUE=$(cat $BL_FILE)
+MAX=$(cat /sys/class/backlight/gmux_backlight/max_brightness)
+
+echo "Current: $VALUE"
+echo "Max: $MAX"
+
+NEW=$VALUE
+
+if [ "$1" = "-" ]; then
+    NEW=$(echo $VALUE - $STEP | bc)
+elif [ "$1" = "+" ]; then
+    NEW=$(echo $VALUE + $STEP | bc)
+fi
+
+if [ $NEW -gt $MAX ]; then
+    NEW=$MAX
+elif [ $NEW -lt 0 ]; then
+    NEW=0
+fi
+
+echo "New: $NEW"
+echo $NEW > $BL_FILE

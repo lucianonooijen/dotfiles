@@ -14,6 +14,8 @@ alias glr="gitlab-runner"
 alias plate="java -jar ~/plate-themetool.1.3.jar"
 alias todo="vim ~/todo.md"
 alias aur="makepkg -si"
+alias gacp="git add -A && git commit -v && git push"
+alias z="zathura"
 
 # Folder aliasses
 alias cdh="cd ~"

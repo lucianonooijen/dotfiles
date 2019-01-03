@@ -29,6 +29,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -208,7 +209,7 @@ let g:lightline = {
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=grof
 
 " Readmes autowrap text:
-    autocmd BufRead,BufNewFile *.md set tw=79
+    " autocmd BufRead,BufNewFile *.md set tw=79
 
 " Get line, word and character counts with F3:
     map <F3> :!wc <C-R>%<CR>

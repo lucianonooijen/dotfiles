@@ -1,0 +1,15 @@
+entr 4.1-1
+htop-vim-git 1075.b7b4200-1
+jdk 11.0.1-1
+jre8 8u192-1
+noson-app 3.9.1.r0.gac26e2b-1
+sc-im 0.7.0-2
+screenkey 0.9-1
+simple-mtpfs 0.3.0-1
+snapd 2.36.2-1
+task-spooler 1.0-2
+ttf-emojione 4.0.1-3
+ttf-symbola 11.00-3
+unclutter-xfixes-git v1.4.r1.g6d2142e-1
+urlscan 0.9.0-1
+yay 9.0.1-3

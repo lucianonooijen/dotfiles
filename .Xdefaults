@@ -1,6 +1,6 @@
 *.font: Liberation Mono:pixelsize=24:antialias=true:autohint=true;
 font pango:DejaVu Sans Mono 18
-Xft.dpi: 164
+Xft.dpi: 136
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -47,9 +47,9 @@ Xft.rgba: rgb
 *color6: #66d9ef
 *color14: #66d9ef
 
-!! Whites and grays
+!! Whites and grays || color15 is main text color
 *color7: #75715e
-*color15: #fe8e8e
+*color15: #dddddd
 
 
 URxvt.intensityStyles:	false

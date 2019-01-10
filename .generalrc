@@ -32,6 +32,7 @@ alias sp="sudo pacman"
 alias sps="sudo pacman -S"
 alias sr="sudo ranger"
 alias ap="ansible-playbook"
+alias tf="terraform"
 alias ka="killall"
 alias reloadrc="source ~/.generalrc"
 alias vrc="vim ~/.generalrc && source ~/.generalrc; clear"
@@ -44,7 +45,6 @@ alias sshkey="cat ~/.ssh/id_rsa.pub"
 alias listen="tail -f"
 
 # Adding color
-alias ls='ls -hN --color=auto --group-directories-first'
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.

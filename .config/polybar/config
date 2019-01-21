@@ -1,0 +1,34 @@
+; vim: filetype=dosini
+[section/base]
+include-file = /home/luciano/.config/polybar/settings.conf
+include-file = /home/luciano/.config/polybar/modules.conf
+
+[bar/main]
+monitor = DP-2
+monitor-fallback = eDP-1
+width = 100%
+height = 100
+background = ${colors.background}
+fixed-center = true
+font-0 = ${fonts.main}
+underline-size = 4
+padding = 1
+module-margin = 1
+
+modules-left = ram cpu temp
+modules-center = time
+modules-right = brightness vol bat wifi
+
+[bar/bottom]
+bottom = true
+monitor = DP-2
+monitor-fallback = eDP-1
+width = 100%
+height = 40
+background = ${colors.background}
+fixed-center = true
+font-0 = ${fonts.main}
+underline-size = 0
+modules-center = i3
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev

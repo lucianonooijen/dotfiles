@@ -7,16 +7,18 @@ include-file = /home/luciano/.config/polybar/modules.conf
 monitor = DP-2
 monitor-fallback = eDP-1
 width = 100%
-height = 100
+height = 60
 background = ${colors.background}
 fixed-center = true
 font-0 = ${fonts.main}
+font-1 = ${fonts.nerd}
+underline = ${colors.trans}
 underline-size = 4
 padding = 1
 module-margin = 1
 
 modules-left = ram cpu temp
-modules-center = time
+modules-center = date icons time
 modules-right = brightness vol bat wifi
 
 [bar/bottom]

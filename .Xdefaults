@@ -1,6 +1,7 @@
 *.font: Liberation Mono:pixelsize=24:antialias=true:autohint=true;
 font pango:DejaVu Sans Mono 18
-Xft.dpi: 136
+Xft.dpi: 108
+!Xft.dpi: 136
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -76,16 +77,19 @@ URxvt.resize-font.bigger:	C-Up
 URxvt.url-launcher:	linkhandler
 URxvt.matcher.button:	1
 
-rofi.color-enabled:	true
-rofi.color-window:	#000, #000, #000
-rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
-rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
-rofi.color-urgent:	#002b37, #da4281, #003643, #008ed4, #890661
+rofi.color-enabled: true
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
 
+rofi.font: Liberation Mono 24
 rofi.fake-transparency:	true
-rofi.lines:		3
-rofi.bw:		0
-rofi.opacity:		"10"
-rofi.hide-scrollbar:	true
-rofi.width:		30
+rofi.lines:	10
+rofi.bw: 0
+rofi.opacity: "10"
+rofi.hide-scrollbar: true
+rofi.width:	30
+!rofi.theme: ~/.config/rofi/theme.rasi
+rofi.theme: ~/.config/rofi/material.rasi
 

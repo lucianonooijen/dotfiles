@@ -3,6 +3,18 @@
 # Kubernetes
 alias mk="minikube"
 alias kc="kubectl"
+alias kcaf="kubectl apply -f"
+alias kceti="kubectl exec -ti"
+alias kcdel="kubectl delete"
+alias kcdelf="kubectl delete -f"
+alias kcg="kubectl get"
+alias kce="kubectl edit"
+alias kcd="kubectl describe"
+alias kcdel="kubectl delete"
+alias kcl="kubectl logs"
+alias kclf="kubectl logs -f"
+alias kcpf="kubectl port-forward"
+alias kcr="kubectl rollout"
 
 # Arch
 alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"

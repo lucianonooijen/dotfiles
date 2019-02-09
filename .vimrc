@@ -109,15 +109,15 @@ let g:lightline = {
     \ }
 
 " Auto close brackets
-    inoremap " ""<left>
-    inoremap ' ''<left>
-    inoremap ` ``<left>
-    inoremap ( ()<left>
-    inoremap () ()
+    "inoremap " ""<left>
+    "inoremap ' ''<left>
+    "inoremap ` ``<left>
+    "inoremap ( ()<left>
+    "inoremap () ()
     inoremap (<CR> (<CR>)<ESC>O
-    inoremap [ []<left>
+    "inoremap [ []<left>
     inoremap [<CR> [<CR>]<ESC>O
-    inoremap { {}<left>
+    "inoremap { {}<left>
     inoremap {<CR> {<CR>}<ESC>O
 
 " Copy to and paste from clipboard

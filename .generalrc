@@ -1,5 +1,9 @@
 # vim: filetype=zsh
 
+# Kubernetes
+alias mk="minikube"
+alias kc="kubectl"
+
 # Arch
 alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
 alias bk="sudo vim /sys/class/leds/smc::kbd_backlight/brightness"

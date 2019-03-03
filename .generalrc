@@ -33,6 +33,7 @@ alias todo="v ~/todo.md"
 alias aur="makepkg -si"
 alias gacp="git add -A && git commit -v && git push"
 alias z="zathura"
+alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
 # Folder aliasses
 alias cdh="cd ~"

@@ -71,17 +71,13 @@ call plug#end()
     set showmatch
     set showmode
     set laststatus=2
+    set mouse=nicr
 
 " Shit to make Vim smarter
     set nocompatible
     set si
     set t_Co=256
     set foldenable
-
-" Set word count
-    let g:airline#extensions#wordcount#enabled = 1
-    let g:airline_left_sep=''
-    let g:airline_right_sep=''
 
 " Set word wrap
     set formatoptions=1
@@ -103,12 +99,13 @@ if !has('gui_running')
     set t_Co=256
 endif
 let g:airline_theme='powerlineish'
-let g:lightline = {
-    \ 'colorscheme': 'powerline',
-    \ 'component_function': {
-    \   'cocstatus': 'coc#status'
-    \ },
-    \ }
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Auto close brackets
     "inoremap " ""<left>

@@ -11,7 +11,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim' " Distraction free writing
 
@@ -97,10 +98,11 @@ call plug#end()
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
 
-" Lightline
+" Status line plugin
 if !has('gui_running')
     set t_Co=256
 endif
+let g:airline_theme='powerlineish'
 let g:lightline = {
     \ 'colorscheme': 'powerline',
     \ 'component_function': {

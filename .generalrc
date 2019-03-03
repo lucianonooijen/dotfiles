@@ -1,6 +1,7 @@
 # vim: filetype=zsh
 
 # Kubernetes
+alias hm="helm"
 alias mk="minikube"
 alias kc="kubectl"
 alias kcaf="kubectl apply -f"

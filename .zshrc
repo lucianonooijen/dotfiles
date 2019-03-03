@@ -2,6 +2,7 @@ source ~/.generalrc
 source ~/.profile
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 export ZSH=/Users/luciano/.oh-my-zsh
 export FZF_BASE=/usr/bin/fzf
@@ -18,7 +19,7 @@ plugins=(
   #node
   #nvm
   #yarn
-  #kubectl
+  kubectl
   #minikube
   #helm
   #ansible

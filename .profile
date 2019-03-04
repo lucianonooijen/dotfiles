@@ -23,7 +23,7 @@ export PIX="$HOME/.scripts/pix"
 
 [ ! -f ~/.shortcuts ] && shortcuts >/dev/null 2>&1
 
-# [ -f ~/.bashrc ] && source ~/.bashrc
+[ -f ~/.bashrc ] && source ~/.bashrc
 
 # Start graphical server if i3 not already running.
 if [ "$(tty)" = "/dev/tty1" ]; then
@@ -32,6 +32,6 @@ fi
 
 # Switch escape and caps and use wal colors if tty:
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
-# tty | grep tty >/dev/null && wal -Rns
+tty | grep tty >/dev/null && wal -Rns
 
 export PATH="$HOME/.cargo/bin:$PATH"

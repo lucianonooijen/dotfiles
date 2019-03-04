@@ -21,7 +21,7 @@ backup:
 	(ls ~/.Xresources 2>/dev/null && mv ~/.Xresources ~/dotfiles_backup) || echo 'xresources not backupped'
 	(ls ~/.zprofile 2>/dev/null && mv ~/.zprofile ~/dotfiles_backup) || echo 'zprofile not backupped'
 	(ls ~/.zshrc 2>/dev/null && mv ~/.zshrc ~/dotfiles_backup) || echo 'zshrc not backupped'
-	mv dotfiles_backup dotfiles_backup_$(date "+%d-%m-%Y-%T")
+	mv ~/dotfiles_backup ~/dotfiles_backup_$(date "+%d-%m-%Y-%T")
 
 link:
 	ln -sv $(pwd)/.bashrc $HOME

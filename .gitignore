@@ -17,3 +17,5 @@
 .config/mpd/
 .config/mutt/
 .config/pulse/
+.vagrant/
+*.log

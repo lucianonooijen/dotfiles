@@ -8,3 +8,12 @@
 .config/filezilla/
 .config/thefuck/
 .config/yarn/
+.config/Code - OSS/
+.config/Slack/
+.config/chromium/
+.config/coc/
+.config/dconf/
+.config/libreoffice/
+.config/mpd/
+.config/mutt/
+.config/pulse/

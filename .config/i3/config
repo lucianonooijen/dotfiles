@@ -51,8 +51,10 @@ exec --no-startup-id unclutter
 exec --no-startup-id i3mpdupdate
 # mpd startup
 exec --no-startup-id mpd
-# Luciano
-exec "xrandr --dpi 192"
+# Rdandr, was 192
+exec "xrandr --dpi 164"
+# Start Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
@@ -80,30 +82,30 @@ client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
 client.urgent		$darkred	$darkred	$black		$darkred		$darkred
 client.background $black
 
-bar {
-	font pango:mono 18
-	colors {
-			background $darkblack
-			statusline $darkwhite
-			separator $cyan
-			focused_workspace  $blue $darkblue $darkblack
-        		active_workspace   $blue $blue $darkwhite
-      			inactive_workspace $darkblack $darkblack $white
-        		urgent_workspace   $darkblack $darkblack $white
-		}
-	status_command i3blocks
-	position top
-	mode dock
-	modifier None
-}
+#bar {
+	#font pango:mono 18
+	#colors {
+			#background $darkblack
+			#statusline $darkwhite
+			#separator $cyan
+			#focused_workspace  $blue $darkblue $darkblack
+                #active_workspace   $blue $blue $darkwhite
+                  #inactive_workspace $darkblack $darkblack $white
+                #urgent_workspace   $darkblack $darkblack $white
+		#}
+	#status_command i3blocks
+	#position top
+	#mode dock
+	#modifier None
+#}
 
 # #---Luciano Bindings---# #
 bindsym $mod+Control+c 		exec --no-startup-id code
 bindsym $mod+Control+m      exec --no-startup-id mattermost-desktop
-bindsym $mod+Control+s      exec --no-startup-id slack
 bindsym $mod+Control+g      exec --no-startup-id gitkraken
 bindsym $mod+Control+d      exec --no-startup-id dbeaver
 bindsym $mod+Control+w      exec --no-startup-id chromium
+bindsym $mod+Control+s      exec --no-startup-id rofi -show ssh
 
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
@@ -164,7 +166,7 @@ bindsym $mod+Shift+a		exec $term -e pulsemixer
 bindsym $mod+s			gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id dmenu_run
+bindsym $mod+d			exec --no-startup-id rofi -show run -modi drun -show-icons -sidebar-mode -terminal st
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 set $freeze Distraction-free mode (super+shift+f to reactivate bindings)

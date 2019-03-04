@@ -1,7 +1,8 @@
 #!/bin/sh
 
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+[ -f ~/.Xdefaults ] && xrdb ~/.Xdefaults
+# [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
 
 xset r rate 200 50
 

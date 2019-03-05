@@ -94,6 +94,11 @@ call plug#end()
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
 
+" Show indentation guides
+    set listchars=tab:→-,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+    noremap <Leader>g :set list<cr>
+    noremap <Leader>h :set list!<cr>
+
 " Status line plugin
 if !has('gui_running')
     set t_Co=256

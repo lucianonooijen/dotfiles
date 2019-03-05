@@ -11,7 +11,7 @@ fi
 export GPG_TTY=$(tty)
 
 source ~/.generalrc
-source /home/luciano/.shortcuts
+source ~/.shortcuts
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

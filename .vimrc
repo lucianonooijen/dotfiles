@@ -94,8 +94,12 @@ call plug#end()
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
 
+" Switch between indent modes
+    noremap <Leader>it :set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab<cr>
+    noremap <Leader>is :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab<cr>
+
 " Show indentation guides
-    set listchars=tab:→-,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+    set listchars=tab:→_,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
     noremap <Leader>g :set list<cr>
     noremap <Leader>h :set list!<cr>
 

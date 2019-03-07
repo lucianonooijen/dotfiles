@@ -39,9 +39,18 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
 
+" Completion, 'run pip3 install --user pynvim', then ':UpdateRemotePlugins'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " Archive to maybe use later (again)
 " Plug 'vim-syntastic/syntastic'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer' }
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 call plug#end()

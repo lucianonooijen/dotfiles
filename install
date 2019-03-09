@@ -50,6 +50,13 @@ ln -sv $(pwd)/.Xresources $HOME
 ln -sv $(pwd)/.zprofile $HOME
 ln -sv $(pwd)/.zshrc $HOME
 
+# Install oh-my-zsh
+mv .oh-my-zsh .oh-my-zsh.bak
+git clone https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+mv .oh-my-zsh.bak/themes/luciano.zsh-theme .oh-my-zsh/themes
+rm -rf .oh-my-zsh.bak
+
 # Done!
 echo 'Done!'
 

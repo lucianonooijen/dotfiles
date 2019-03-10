@@ -35,6 +35,7 @@ alias gacp="git add -A && git commit -v && git push"
 alias z="zathura"
 alias rrc="source ~/.generalrc"
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+alias cdd="cd ~/dotfiles"
 
 # Dotfile edit aliasses
 alias vx="vim ~/.Xdefaults"

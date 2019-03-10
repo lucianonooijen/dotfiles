@@ -3,6 +3,7 @@
 .oh-my-zsh/
 !.oh-my-zsh/themes/luciano.zsh-theme
 .vim/plugged
+.config/janbar/noson.conf
 .config/.mono/
 .config/configstore/
 .config/filezilla/

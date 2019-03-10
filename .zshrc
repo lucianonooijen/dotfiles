@@ -5,7 +5,7 @@ source ~/.profile
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
-export ZSH=/Users/luciano/.oh-my-zsh
+export ZSH=/Users/luciano/.oh-my-zsh # On Arch, run `sudo ln -s /home /Users`
 export FZF_BASE=/usr/bin/fzf
 
 eval $(thefuck --alias)

@@ -1,52 +1,30 @@
 # vim: filetype=zsh
 
-# Kubernetes
-alias hm="helm"
-alias mk="minikube"
-alias kc="kubectl"
-alias kcaf="kubectl apply -f"
-alias kceti="kubectl exec -ti"
-alias kcdel="kubectl delete"
-alias kcdelf="kubectl delete -f"
-alias kcg="kubectl get"
-alias kce="kubectl edit"
-alias kcd="kubectl describe"
-alias kcdel="kubectl delete"
-alias kcl="kubectl logs"
-alias kclf="kubectl logs -f"
-alias kcpf="kubectl port-forward"
-alias kcr="kubectl rollout"
-
 # Arch
 alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
 alias bk="sudo vim /sys/class/leds/smc::kbd_backlight/brightness"
+alias sb="sudo bluetoothctl power on && sudo bluetoothctl"
+alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
 alias bat="acpi"
 alias rx="xrdb ~/.Xdefaults"
 alias sshfix="eval `ssh-agent -s`"
-alias vi3="v .config/i3/config"
-alias sb="sudo bluetoothctl power on && sudo bluetoothctl"
-alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
-alias vvim="v ~/.vimrc"
-alias glr="gitlab-runner"
 alias rx="xrdb ~/.Xdefaults" # && xrdb -merge ~/.Xresources
-alias todo="v ~/todo.md"
-alias aur="makepkg -si"
-alias gacp="git add -A && git commit -v && git push"
-alias z="zathura"
 alias rrc="source ~/.generalrc"
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
-alias cdd="cd ~/dotfiles"
 
 # Dotfile edit aliasses
-alias vx="vim ~/.Xdefaults"
-alias vi3="vim .config/i3/config"
-alias vrc="vim ~/.generalrc && source ~/.generalrc; clear"
+alias vx="v ~/.Xdefaults"
+alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
+alias vi3="v ~/.config/i3/config"
+alias vvim="v ~/.vimrc"
 
 # Folder aliasses
 alias cdh="cd ~"
 alias cdg="cd ~/Git"
+alias cdd="cd ~/dotfiles"
 
 # Shortcuts
+alias todo="v ~/todo.md"
 alias please="sudo"
 alias s="sudo"
 alias v="nvim"
@@ -57,11 +35,14 @@ alias sp="sudo pacman"
 alias sps="sudo pacman -S"
 alias sr="sudo ranger"
 alias ap="ansible-playbook"
+alias glr="gitlab-runner"
 alias tf="terraform"
+alias z="zathura"
 alias ka="killall"
 alias reloadrc="source ~/.generalrc"
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
 alias mkd="mkdir -pv"
+alias gacp="git add -A && git commit -v && git push"
 
 # Custom aliasses
 alias myip="curl http://ipecho.net/plain; echo"
@@ -122,6 +103,23 @@ alias muttwizard="~/.config/mutt/mutt-wizard.sh"
 alias sdn="sudo shutdown now"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 alias pi="bash ~/.larbs/wizard/wizard.sh"
+
+# Kubernetes
+alias hm="helm"
+alias mk="minikube"
+alias kc="kubectl"
+alias kcaf="kubectl apply -f"
+alias kceti="kubectl exec -ti"
+alias kcdel="kubectl delete"
+alias kcdelf="kubectl delete -f"
+alias kcg="kubectl get"
+alias kce="kubectl edit"
+alias kcd="kubectl describe"
+alias kcdel="kubectl delete"
+alias kcl="kubectl logs"
+alias kclf="kubectl logs -f"
+alias kcpf="kubectl port-forward"
+alias kcr="kubectl rollout"
 
 # Custom functions
 # function mkdircd() { mkdir $1 && cd $1 }

@@ -109,8 +109,14 @@ call plug#end()
 
 " Show indentation guides
     set listchars=tab:→_,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
-    noremap <Leader>g :set list<cr>
+    noremap <Leader>i :set list<cr>
     noremap <Leader>h :set list!<cr>
+
+" Git bindings
+    noremap <Leader>g :Gstatus<cr>
+    noremap <Leader>c :Gcommit<cr>
+    noremap <Leader>b :Gblame<cr>
+    noremap <Leader>d :Gdiff<cr>
 
 " Status line plugin
 if !has('gui_running')

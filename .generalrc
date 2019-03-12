@@ -24,10 +24,11 @@ alias cdg="cd ~/Git"
 alias cdd="cd ~/dotfiles"
 
 # Shortcuts
+alias v="nvim"
 alias todo="v ~/todo.md"
 alias please="sudo"
 alias s="sudo"
-alias v="nvim"
+alias ddg="ddgr"
 alias p="pacman"
 alias r="ranger"
 alias sv="sudo nvim"

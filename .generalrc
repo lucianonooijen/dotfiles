@@ -4,13 +4,10 @@
 alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
 alias bk="sudo vim /sys/class/leds/smc::kbd_backlight/brightness"
 alias sb="sudo bluetoothctl power on && sudo bluetoothctl"
-alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
 alias bat="acpi"
-alias rx="xrdb ~/.Xdefaults"
-alias sshfix="eval `ssh-agent -s` ssh-add"
 alias rx="xrdb ~/.Xdefaults" # && xrdb -merge ~/.Xresources
-alias rrc="source ~/.generalrc"
-alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+alias sshfix="eval `ssh-agent -s` ssh-add"
+alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
 
 # Dotfile edit aliasses
 alias vx="v ~/.Xdefaults"
@@ -45,6 +42,8 @@ alias reloadrc="source ~/.generalrc"
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
 alias mkd="mkdir -pv"
 alias gacp="git add -A && git commit -v && git push"
+alias gfl="gf && gl"
+alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
 # Custom aliasses
 alias myip="curl http://ipecho.net/plain; echo"

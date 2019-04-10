@@ -1,5 +1,15 @@
 # vim: filetype=zsh
 
+# Shenanigans
+alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+alias matrix="cmatrix"
+alias cookie="fortune | cowsay -f sodomized | lolcat"
+alias arch="figlet btw i use arch | lolcat"
+alias bs="bullshit"
+alias aqua="asciiquarium"
+alias clock="tty-clock"
+alias hack="hollywood"
+
 # Arch
 alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
 alias bk="sudo vim /sys/class/leds/smc::kbd_backlight/brightness"
@@ -10,7 +20,6 @@ alias rx="xrdb ~/.Xdefaults"
 alias sshfix="eval `ssh-agent -s`"
 alias rx="xrdb ~/.Xdefaults" # && xrdb -merge ~/.Xresources
 alias rrc="source ~/.generalrc"
-alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
 # Dotfile edit aliasses
 alias vx="v ~/.Xdefaults"

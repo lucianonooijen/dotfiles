@@ -72,7 +72,8 @@ alias grep="grep --color=auto" # Color grep - highlight desired sequence.
 
 # Fancy alternatives to boring bash commands
 alias els="exa --group --long --header --git"
-alias ccat="highlight"
+alias ccat="highlight" # TODO: Check Arch
+alias cccat="source-highlight --out-format=esc256 -o STDOUT -i" # TODO: Check Arch
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
@@ -172,6 +173,9 @@ alias grbi="git rebase -i"
 alias gsta="git stash"
 alias gsu="git submodule update"
 alias gwch="git whatchanged -p --abbrev-commit --pretty = medium"
+alias gog="git log  --abbrev-commit --name-status --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias gml="git log --stat --color --decorate --all --oneline"
+alias gdw="git diff --word-diff=color"
 
 # Tmux
 alias t="tmux"
@@ -279,6 +283,7 @@ vf() {
 }
 
 # Useful bash scripts from https://www.quora.com/What-is-the-most-useful-bash-script-that-you-have-ever-written/
+# TODO: Move to separate script files
 weather(){ curl -s "wttr.in/$1?m1"}
 timer() {
   total=$1
@@ -296,3 +301,6 @@ up() {
     times=$(($times - 1))
   done
 }
+ifind() { find . -iname "*$1*" }
+pidof () { ps -Ac | egrep -i $@ | awk '{print $1}'; } # For MacOS TODO: Check Arch
+# TODO: Make some JSON cat script

@@ -277,3 +277,22 @@ vf() {
         fi;
     done
 }
+
+# Useful bash scripts from https://www.quora.com/What-is-the-most-useful-bash-script-that-you-have-ever-written/
+weather(){ curl -s "wttr.in/$1?m1"}
+timer() {
+  total=$1
+  for ((i=total; i>0; i--));
+    do sleep 1;
+    printf "Time remaining $i secs \r";
+  done
+  echo -e "\nTimer is done!\n"
+  echo -e "\a"
+}
+up() {
+  times=$1
+  while [ "$times" -gt "0" ]; do
+    cd ..
+    times=$(($times - 1))
+  done
+}

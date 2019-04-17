@@ -3,11 +3,13 @@ source ~/.profile
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# ZSH settings
 ZSH_THEME="luciano"
 plugins=(
   git vi-mode fzf zsh-autosuggestions zsh-syntax-highlighting
   #node nvm yarn kubectl
 )
+export ZSH=/Users/luciano/.oh-my-zsh # On Arch, run `sudo ln -s /home /Users`
 source $ZSH/oh-my-zsh.sh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -16,7 +18,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Other exports
-export ZSH=/Users/luciano/.oh-my-zsh # On Arch, run `sudo ln -s /home /Users`
 export FZF_BASE=/usr/bin/fzf
 export PAGER="most"
 export ANSIBLE_NOCOWS=1 # No cowsay in Ansible, because I'm boring af

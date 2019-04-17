@@ -14,7 +14,7 @@ alias hack="hollywood"
 alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
 alias bk="sudo vim /sys/class/leds/smc::kbd_backlight/brightness"
 alias sb="sudo bluetoothctl power on && sudo bluetoothctl"
-alias bat="acpi"
+#alias bat="acpi"
 alias gpgexport="gpg --armor --export"
 alias startcups="ssc start cups-browsed.service"
 alias rx="xrdb ~/.Xdefaults" # && xrdb -merge ~/.Xresources
@@ -65,11 +65,13 @@ alias sshkey="cat ~/.ssh/id_rsa.pub"
 alias listen="tail -f"
 
 # Adding color
-alias grep="grep --color=auto"
 alias diff="diff --color=auto"
-alias ccat="highlight --out-for > alias ls='ls -hN --color=auto --group-directories-first'"
-#alias ls="ls -hN --color=auto --group-directories-first"
 alias grep="grep --color=auto" # Color grep - highlight desired sequence.
+#alias ls="ls -hN --color=auto --group-directories-first"
+
+# Fancy alternatives to boring bash commands
+alias els="exa --group --long --header --git"
+alias ccat="highlight"
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link
@@ -100,8 +102,6 @@ alias yrt="yarn run test"
 alias yrtw="yarn run test:watch"
 alias ygenlic="yarn licenses generate-disclaimer"
 
-# Exa
-alias els="exa --group --long --header --git"
 
 # Code editor aliasses
 alias c="code"

@@ -18,6 +18,8 @@
 .config/mpd/
 .config/mutt/
 .config/pulse/
+.config/gatsby
+.config/inkscape
 .vagrant/
 .mozilla/
 *.log

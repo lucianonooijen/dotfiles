@@ -6,6 +6,13 @@ My personal dotfiles repo
 
 To install, make sure ZSH is installed, then run `./install`
 
+## Things I am working on right now
+
+* Fixing the TODOs in `.generalrc`
+* Better installation script
+* Better support for switching between Arch and MacOS
+* Backup scripts, for both Arch and MacOS
+
 ## /r/unixporn info
 
 **System**:

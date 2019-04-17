@@ -19,7 +19,7 @@ plugins=(
   #node
   #nvm
   #yarn
-  kubectl
+  #kubectl
   zsh-autosuggestions
   zsh-syntax-highlighting
 )

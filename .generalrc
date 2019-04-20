@@ -312,3 +312,4 @@ up() {
 ifind() { find . -iname "*$1*" }
 pidof () { ps -Ac | egrep -i $@ | awk '{print $1}'; } # For MacOS TODO: Check Arch
 # TODO: Make some JSON cat script
+

@@ -1,4 +1,3 @@
-source ~/.generalrc
 source ~/.profile
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -27,3 +26,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Enable the fuck command
 eval $(thefuck --alias)
+
+# Load generalrc latest, to Oh My ZSH commands
+source ~/.generalrc

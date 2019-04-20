@@ -20,6 +20,9 @@
 .config/pulse/
 .config/gatsby
 .config/inkscape
+.config/msmtp/
+.config/mutt
+.config/mutt-wizard
 .vagrant/
 .mozilla/
 *.log

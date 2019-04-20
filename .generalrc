@@ -71,9 +71,17 @@ alias grep="grep --color=auto" # Color grep - highlight desired sequence.
 #alias ls="ls -hN --color=auto --group-directories-first"
 
 # Fancy alternatives to boring bash commands
-alias els="exa --group --long --header --git"
 alias ccat="highlight" # TODO: Check Arch
 alias cccat="source-highlight --out-format=esc256 -o STDOUT -i" # TODO: Check Arch
+
+# Aliasses for exa, an ls alternative
+alias els="exa --group --long --header --git"
+alias l="exa"
+alias la="exa --all"
+alias ll="exa --group --long --header --git --classify"
+alias lla="exa --group --long --header --git --classify --all"
+alias lll="exa --group --long --header --git --classify --extended"
+alias llla="exa --group --long --header --git --classify --extended --all"
 
 # Internet
 alias yt="youtube-dl --add-metadata -ic" # Download video link

@@ -135,6 +135,11 @@ call plug#end()
     noremap <Leader>b :Gblame<cr>
     noremap <Leader>d :Gdiff<cr>
 
+" NeoSnippet
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
+
 " Status line plugin
 if !has('gui_running')
     set t_Co=256

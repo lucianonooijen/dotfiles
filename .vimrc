@@ -20,7 +20,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/denite.nvim'
 
 " Functionality  additions
-"Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jreybert/vimagit' " :Magit
 Plug 'lucianonooijen/vimling' "<leader><leader>d will toggle dead keys
@@ -43,6 +42,10 @@ Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'maksimr/vim-jsbeautify'
 
+" Snippets
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
 " Completion, 'run pip3 install --user pynvim', then ':UpdateRemotePlugins'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -52,14 +55,11 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 0
-
-" Snippets
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Archive to maybe use later (again)
 " Plug 'vim-syntastic/syntastic'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'w0rp/ale'
 
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -71,7 +71,6 @@ call plug#end()
     execute pathogen#helptags()
 
 " General stuff
-    " colorscheme monokai_pro
     colorscheme monokai
     filetype on
     highlight LineNr ctermfg=grey
@@ -115,10 +114,8 @@ call plug#end()
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
 
-
 " Allows you to save files you opened without write permissions via sudo
     cmap w!! w !sudo tee %
-
 
 " Switch between indent modes
     noremap <Leader>it :set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab<cr>
@@ -225,9 +222,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
       endfor
     endfunction
 
-" Conquer of Completion (COC)
-    vmap <leader>f <Plug>(coc-format-selected)
-
 " Youcompleteme
     let g:loaded_youcompleteme = 1 " Disable by default
 
@@ -241,10 +235,21 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
     autocmd FileType jsx noremap <buffer> <c-z> :call JsxBeautify()<cr>
     autocmd FileType html noremap <buffer> <c-z> :call HtmlBeautify()<cr>
     autocmd FileType css noremap <buffer> <c-z> :call CSSBeautify()<cr>
+
 " COC.nvim config
+    let g:coc_global_extensions = [
+        \ 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css',
+        \ 'coc-python', 'coc-rls', 'coc-pairs', 'coc-java', 'coc-html',
+        \ 'coc-jest', 'coc-ccls', 'coc-tslint', 'coc-highlight', 'coc-phpls',
+        \ 'coc-yaml', 'coc-docker', 'coc-sh', 'coc-go'
+        \ ]
+    vmap <leader>f <Plug>(coc-format-selected)
+    nmap <leader>coc :CocList commands<cr>
     nmap <silent> <leader>dd <Plug>(coc-definition)
     nmap <silent> <leader>dr <Plug>(coc-references)
     nmap <silent> <leader>di <Plug>(coc-implementation)
+    nmap <silent> [c <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]c <Plug>(coc-diagnostic-next)
     function! s:check_back_space() abort
       let col = col('.') - 1
       return !col || getline('.')[col - 1]  =~ '\s'

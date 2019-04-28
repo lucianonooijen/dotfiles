@@ -11,7 +11,8 @@ To install, make sure ZSH is installed, then run `./install`
 * Fixing the TODOs in `.generalrc`
 * Better installation script
 * Better support for switching between Arch and MacOS
-* Backup scripts, for both Arch and MacOS
+* Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)
+* Create documentation for i3, NeoVim
 
 ## /r/unixporn info
 

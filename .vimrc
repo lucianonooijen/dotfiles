@@ -2,12 +2,13 @@ let mapleader =" "
 
 call plug#begin('~/.vim/plugged')
 
+" Testing
+
 " General
 Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
 
 " Layout
-Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -15,6 +16,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim' " Distraction free writing
+
+" Searching
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/denite.nvim'
 
 " Functionality  additions
 Plug 'w0rp/ale'
@@ -169,6 +174,39 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
     let g:prettier#config#single_quote = 'true'
     let g:prettier#config#trailing_comma = 'all'
     let g:prettier#config#jsx_bracket_same_line = 'true'
+
+" Denite
+    nmap ; :Denite buffer -split=floating -winrow=1<CR>
+    nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
+    nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
+    nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+    call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+    call denite#custom#var('grep', 'command', ['rg'])
+    call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'final_opts', [])
+    call denite#custom#var('buffer', 'date_format', '')
+    let s:denite_options = {'default' : {
+        \ 'auto_resize': 1,
+        \ 'prompt': 'λ:',
+        \ 'direction': 'rightbelow',
+        \ 'winminheight': '10',
+        \ 'highlight_mode_insert': 'Visual',
+        \ 'highlight_mode_normal': 'Visual',
+        \ 'prompt_highlight': 'Function',
+        \ 'highlight_matched_char': 'Function',
+        \ 'highlight_matched_range': 'Normal'
+        \ }}
+    " Loop through denite options and enable them
+    function! s:profile(opts) abort
+      for l:fname in keys(a:opts)
+        for l:dopt in keys(a:opts[l:fname])
+          call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
+        endfor
+      endfor
+    endfunction
 
 " Conquer of Completion (COC)
     vmap <leader>f <Plug>(coc-format-selected)

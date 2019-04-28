@@ -2,8 +2,6 @@ let mapleader =" "
 
 call plug#begin('~/.vim/plugged')
 
-" Testing
-
 " General
 Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
@@ -22,7 +20,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Shougo/denite.nvim'
 
 " Functionality  additions
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jreybert/vimagit' " :Magit
 Plug 'lucianonooijen/vimling' "<leader><leader>d will toggle dead keys
@@ -36,6 +34,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'chr4/nginx.vim'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -52,11 +51,18 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+
+" Snippets
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 " Archive to maybe use later (again)
 " Plug 'vim-syntastic/syntastic'
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
+"Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 call plug#end()
 
@@ -81,6 +87,7 @@ call plug#end()
     set smartcase
     set backspace=indent,eol,start
     set autoindent
+    set autoread
     set ruler
     set showmatch
     set showmode
@@ -107,6 +114,11 @@ call plug#end()
 
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
+
+
+" Allows you to save files you opened without write permissions via sudo
+    cmap w!! w !sudo tee %
+
 
 " Switch between indent modes
     noremap <Leader>it :set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab<cr>
@@ -224,6 +236,18 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
     autocmd FileType jsx noremap <buffer> <c-z> :call JsxBeautify()<cr>
     autocmd FileType html noremap <buffer> <c-z> :call HtmlBeautify()<cr>
     autocmd FileType css noremap <buffer> <c-z> :call CSSBeautify()<cr>
+" COC.nvim config
+    nmap <silent> <leader>dd <Plug>(coc-definition)
+    nmap <silent> <leader>dr <Plug>(coc-references)
+    nmap <silent> <leader>di <Plug>(coc-implementation)
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

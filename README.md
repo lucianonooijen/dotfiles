@@ -6,6 +6,14 @@ My personal dotfiles repo
 
 To install, make sure ZSH is installed, then run `./install`
 
+## Things I am working on right now
+
+* Fixing the TODOs in `.generalrc`
+* Better installation script
+* Better support for switching between Arch and MacOS
+* Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)
+* Create documentation for i3, NeoVim
+
 ## /r/unixporn info
 
 **System**:

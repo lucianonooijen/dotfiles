@@ -7,7 +7,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
 
 " Layout
-Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -16,8 +15,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/goyo.vim' " Distraction free writing
 
+" Searching
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/denite.nvim'
+
 " Functionality  additions
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jreybert/vimagit' " :Magit
 Plug 'lucianonooijen/vimling' "<leader><leader>d will toggle dead keys
@@ -31,6 +34,7 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'chr4/nginx.vim'
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -47,11 +51,18 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+
+" Snippets
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
 
 " Archive to maybe use later (again)
 " Plug 'vim-syntastic/syntastic'
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
+"Close preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 call plug#end()
 
@@ -76,6 +87,7 @@ call plug#end()
     set smartcase
     set backspace=indent,eol,start
     set autoindent
+    set autoread
     set ruler
     set showmatch
     set showmode
@@ -103,6 +115,11 @@ call plug#end()
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
 
+
+" Allows you to save files you opened without write permissions via sudo
+    cmap w!! w !sudo tee %
+
+
 " Switch between indent modes
     noremap <Leader>it :set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab<cr>
     noremap <Leader>is :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab<cr>
@@ -117,6 +134,11 @@ call plug#end()
     noremap <Leader>c :Gcommit<cr>
     noremap <Leader>b :Gblame<cr>
     noremap <Leader>d :Gdiff<cr>
+
+" NeoSnippet
+    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " Status line plugin
 if !has('gui_running')
@@ -170,6 +192,39 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
     let g:prettier#config#trailing_comma = 'all'
     let g:prettier#config#jsx_bracket_same_line = 'true'
 
+" Denite
+    nmap ; :Denite buffer -split=floating -winrow=1<CR>
+    nmap <leader>t :Denite file/rec -split=floating -winrow=1<CR>
+    nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
+    nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+    call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+    call denite#custom#var('grep', 'command', ['rg'])
+    call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+    call denite#custom#var('grep', 'recursive_opts', [])
+    call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+    call denite#custom#var('grep', 'separator', ['--'])
+    call denite#custom#var('grep', 'final_opts', [])
+    call denite#custom#var('buffer', 'date_format', '')
+    let s:denite_options = {'default' : {
+        \ 'auto_resize': 1,
+        \ 'prompt': 'λ:',
+        \ 'direction': 'rightbelow',
+        \ 'winminheight': '10',
+        \ 'highlight_mode_insert': 'Visual',
+        \ 'highlight_mode_normal': 'Visual',
+        \ 'prompt_highlight': 'Function',
+        \ 'highlight_matched_char': 'Function',
+        \ 'highlight_matched_range': 'Normal'
+        \ }}
+    " Loop through denite options and enable them
+    function! s:profile(opts) abort
+      for l:fname in keys(a:opts)
+        for l:dopt in keys(a:opts[l:fname])
+          call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
+        endfor
+      endfor
+    endfunction
+
 " Conquer of Completion (COC)
     vmap <leader>f <Plug>(coc-format-selected)
 
@@ -186,6 +241,18 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
     autocmd FileType jsx noremap <buffer> <c-z> :call JsxBeautify()<cr>
     autocmd FileType html noremap <buffer> <c-z> :call HtmlBeautify()<cr>
     autocmd FileType css noremap <buffer> <c-z> :call CSSBeautify()<cr>
+" COC.nvim config
+    nmap <silent> <leader>dd <Plug>(coc-definition)
+    nmap <silent> <leader>dr <Plug>(coc-references)
+    nmap <silent> <leader>di <Plug>(coc-implementation)
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ <SID>check_back_space() ? "\<TAB>" :
+          \ coc#refresh()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

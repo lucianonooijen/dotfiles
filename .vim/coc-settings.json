@@ -5,5 +5,11 @@
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "languageserver": {
+     "elixirLS": {
+      "command": "/Users/luciano/Git/elixir-ls/release/language_server.sh",
+      "filetypes": ["elixir", "eelixir"]
+     }
+  }
 }

@@ -21,6 +21,7 @@ alias rx="xrdb ~/.Xdefaults" # && xrdb -merge ~/.Xresources
 alias rrc="source ~/.generalrc"
 alias sshfix="eval `ssh-agent -s` ssh-add"
 alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
+alias fixbg="feh --bg-fill ~/dotfiles/.config/wall.png"
 
 # Dotfile edit aliasses
 alias vx="v ~/.Xdefaults"

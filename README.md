@@ -8,6 +8,7 @@ To install, make sure ZSH is installed, then run `./install`
 
 ## Things I am working on right now
 
+* Let the zsh vim extension use NeoVim
 * Set Polybar to dynamically load the display name, following [this](https://github.com/jaagr/polybar/wiki) guide
 * Fixing the TODOs in `.generalrc`
 * Better installation script

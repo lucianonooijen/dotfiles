@@ -22,7 +22,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 # Other exports
 export FZF_BASE=/usr/bin/fzf
-export PAGER="most"
 export ANSIBLE_NOCOWS=1 # No cowsay in Ansible, because I'm boring af
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

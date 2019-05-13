@@ -282,36 +282,5 @@ vf() {
     v $(f)
 }
 
-# List colors
-256colors() {
-    for i in {0..255};
-        do printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i;
-        if ! (( ($i + 1 ) % 8 ));
-            then echo;
-        fi;
-    done
-}
-
-# Useful bash scripts from https://www.quora.com/What-is-the-most-useful-bash-script-that-you-have-ever-written/
-# TODO: Move to separate script files
-weather(){ curl -s "wttr.in/$1?m1"}
-timer() {
-  total=$1
-  for ((i=total; i>0; i--));
-    do sleep 1;
-    printf "Time remaining $i secs \r";
-  done
-  echo -e "\nTimer is done!\n"
-  echo -e "\a"
-}
-up() {
-  times=$1
-  while [ "$times" -gt "0" ]; do
-    cd ..
-    times=$(($times - 1))
-  done
-}
-ifind() { find . -iname "*$1*" }
-pidof () { ps -Ac | egrep -i $@ | awk '{print $1}'; } # For MacOS TODO: Check Arch
 # TODO: Make some JSON cat script
 

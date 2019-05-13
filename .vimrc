@@ -239,7 +239,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " COC.nvim config
     let g:coc_global_extensions = [
         \ 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css',
-        \ 'coc-python', 'coc-rls', 'coc-pairs', 'coc-java', 'coc-html',
+        \ 'coc-python', 'coc-rls', 'coc-pairs', 'coc-html', 'coc-yank',
         \ 'coc-jest', 'coc-ccls', 'coc-tslint', 'coc-highlight', 'coc-phpls',
         \ 'coc-yaml', 'coc-docker', 'coc-go'
         \ ]

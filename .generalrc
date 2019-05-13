@@ -124,11 +124,8 @@ alias htopcpu="htop --sort-key=PERCENT_CPU"
 alias htopmem="htop --sort-key=PERCENT_MEM"
 
 # System Maintainence
-alias mw="~/.config/mutt/mutt-wizard.sh"
-alias muttwizard="~/.config/mutt/mutt-wizard.sh"
 alias sdn="sudo shutdown now"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
-alias pi="bash ~/.larbs/wizard/wizard.sh"
 
 # Kubernetes
 alias hm="helm"

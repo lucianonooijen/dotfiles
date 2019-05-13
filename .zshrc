@@ -19,6 +19,7 @@ test -e "${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source 
 # Setting the $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/flutter/bin:$PATH
 
 # Other exports
 export FZF_BASE=/usr/bin/fzf

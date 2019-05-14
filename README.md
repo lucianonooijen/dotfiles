@@ -10,6 +10,7 @@ To install, make sure ZSH is installed, then run `./install`
 
 * Let the zsh vim extension use NeoVim
 * Set Polybar to dynamically load the display name, following [this](https://github.com/jaagr/polybar/wiki) guide
+* For Polybar, add disk usage indicator
 * Fixing the TODOs in `.generalrc`
 * Better installation script
 * Better support for switching between Arch and MacOS

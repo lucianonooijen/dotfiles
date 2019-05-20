@@ -1,6 +1,6 @@
 # vim: filetype=zsh
 # New
-alias cde="cd ~/eneco"
+alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 8.13"
 
 # Shenanigans
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
@@ -24,6 +24,8 @@ alias rrc="source ~/.generalrc"
 alias sshfix="eval `ssh-agent -s` ssh-add"
 alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
 alias fixbg="feh --bg-fill ~/dotfiles/.config/wall.png"
+alias email="mbsync --all && neomutt && mbsync --all"
+alias ys="yay -S"
 
 # Dotfile edit aliasses
 alias vx="v ~/.Xdefaults"

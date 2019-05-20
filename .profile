@@ -5,7 +5,7 @@
 # variables and default programs:
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du $HOME/.scripts/ | cut -f2 | tr '\n' ':')$PATH"
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERMINAL="st"
 # Link handler is set as the $BROWSER for use with urlscan.
 # Set your real browser in $TRUEBROWSER.

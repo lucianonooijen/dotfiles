@@ -76,7 +76,7 @@ super + shift + F4
 
 # Function keys
 super + F1
-    groff -kejpt -mom ~/.readme.mom -Tpdf | zathura - # TODO: Write
+    groff -mom ~/.readme.mom -Tpdf | zathura -
 super + F3
     displayselect
 super + F5

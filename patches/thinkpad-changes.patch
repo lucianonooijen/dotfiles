@@ -1,0 +1,141 @@
+From a7e5f41bb87c38aa54cbce214c4b72f052834056 Mon Sep 17 00:00:00 2001
+From: Luciano Nooijen <luciano@bytecode.nl>
+Date: Thu, 30 May 2019 13:19:17 +0200
+Subject: [PATCH] Changes for Thinkpad
+
+Signed-off-by: Luciano Nooijen <luciano@bytecode.nl>
+---
+ .Xdefaults                         | 10 +++++-----
+ .config/gtk-2.0/gtkfilechooser.ini |  6 +++---
+ .config/polybar/config             |  8 ++++----
+ .config/polybar/modules.conf       |  2 +-
+ .config/polybar/settings.conf      |  4 ++--
+ .zprofile                          |  4 ++--
+ 6 files changed, 17 insertions(+), 17 deletions(-)
+
+diff --git a/.Xdefaults b/.Xdefaults
+index 905cdef..965a013 100644
+--- a/.Xdefaults
++++ b/.Xdefaults
+@@ -1,6 +1,6 @@
+-*.font: Liberation Mono:pixelsize=24:antialias=true:autohint=true;
+-font pango:DejaVu Sans Mono 18
+-Xft.dpi: 108
++*.font: Liberation Mono:pixelsize=12:antialias=true:autohint=true;
++font pango:DejaVu Sans Mono 12
++Xft.dpi: 64
+ !Xft.dpi: 136
+ Xft.autohint: 0
+ Xft.lcdfilter:  lcddefault
+@@ -57,7 +57,7 @@ URxvt.intensityStyles:	false
+ URxvt.background:       [70]#000000
+ URxvt.depth:		32
+ 
+-URxvt.font:         xft:FiraMono-Regular:size=18
++URxvt.font:         xft:FiraMono-Regular:size=12
+ URxvt.scrollBar:	false
+ URxvt.cursorColor:	white
+ 
+@@ -83,7 +83,7 @@ rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+ rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+ rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+ 
+-rofi.font: Liberation Mono 24
++rofi.font: Liberation Mono 12
+ rofi.fake-transparency:	true
+ rofi.lines:	10
+ rofi.bw: 0
+diff --git a/.config/gtk-2.0/gtkfilechooser.ini b/.config/gtk-2.0/gtkfilechooser.ini
+index e2f0acd..c5fe244 100644
+--- a/.config/gtk-2.0/gtkfilechooser.ini
++++ b/.config/gtk-2.0/gtkfilechooser.ini
+@@ -2,10 +2,10 @@
+ LocationMode=path-bar
+ ShowHidden=false
+ ShowSizeColumn=true
+-GeometryX=300
+-GeometryY=128
++GeometryX=0
++GeometryY=0
+ GeometryWidth=1080
+-GeometryHeight=790
++GeometryHeight=770
+ SortColumn=name
+ SortOrder=ascending
+ StartupMode=recent
+diff --git a/.config/polybar/config b/.config/polybar/config
+index 57c1736..bddef09 100644
+--- a/.config/polybar/config
++++ b/.config/polybar/config
+@@ -4,10 +4,10 @@ include-file = /home/luciano/.config/polybar/settings.conf
+ include-file = /home/luciano/.config/polybar/modules.conf
+ 
+ [bar/main]
+-monitor = DP-2
++monitor = LVDS-1
+ monitor-fallback = eDP-1
+ width = 100%
+-height = 60
++height = 40
+ background = ${colors.background}
+ fixed-center = true
+ font-0 = ${fonts.main}
+@@ -23,10 +23,10 @@ modules-right = brightness vol bat wifi
+ 
+ [bar/bottom]
+ bottom = true
+-monitor = DP-2
++monitor = LVDS-1
+ monitor-fallback = eDP-1
+ width = 100%
+-height = 40
++height = 20
+ background = ${colors.background}
+ fixed-center = true
+ font-0 = ${fonts.main}
+diff --git a/.config/polybar/modules.conf b/.config/polybar/modules.conf
+index 4fdca6c..b27f39f 100644
+--- a/.config/polybar/modules.conf
++++ b/.config/polybar/modules.conf
+@@ -88,7 +88,7 @@ label-full-underline = ${colors.orange}
+ 
+ [module/wifi]
+ type = internal/network
+-interface = wlp4s0
++interface = wls1
+ label-connected =  %{F#a6e22d}%downspeed%  %{F#dddddd} %{F#e73c50} %upspeed%
+ label-disconnected = ne pas de wifi
+ label-connected-underline = ${colors.red}
+diff --git a/.config/polybar/settings.conf b/.config/polybar/settings.conf
+index 613a2d9..918929e 100644
+--- a/.config/polybar/settings.conf
++++ b/.config/polybar/settings.conf
+@@ -17,8 +17,8 @@ cyan = #66d9ef
+ gray = #333333
+ 
+ [fonts]
+-main = "Liberation Mono:pixelsize=18:antialias=true:autohint=true;4"
+-nerd = "DejaVuSansMono Nerd Font:style=Book:pixelsize=22;1"
++main = "Liberation Mono:pixelsize=12:antialias=true:autohint=true;4"
++nerd = "DejaVuSansMono Nerd Font:style=Book:pixelsize=12;1"
+ 
+ [settings]
+ format-background = ${colors.background}
+diff --git a/.zprofile b/.zprofile
+index cf077fe..ccaf27c 100644
+--- a/.zprofile
++++ b/.zprofile
+@@ -14,8 +14,8 @@ export TRUEBROWSER="firefox"
+ export READER="zathura"
+ export BIB="$HOME/Documents/LaTeX/uni.bib"
+ export REFER="$HOME/.referbib"
+-export GDK_SCALE=2
+-export GDK_DPI_SCALE=0.5
++export GDK_SCALE=1
++export GDK_DPI_SCALE=1
+ export QT_AUTO_SCREEN_SCALE_FACTOR=1
+ export TERM=xterm-256color
+ # PIX is here I have LARBS keep icons. Subject to change, hence a variable.
+-- 
+2.21.0
+

@@ -23,6 +23,13 @@
 .config/msmtp/
 .config/mutt
 .config/mutt-wizard
+.config/OpenRCT2/
+.config/Postman/
+.config/QtProject.conf
+.config/kritadisplayrc
+.config/kritarc
+.config/menus/
+.config/surf/
 .vagrant/
 .mozilla/
 *.log

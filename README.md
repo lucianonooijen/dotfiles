@@ -20,6 +20,7 @@ patches/thinkpad-changes.patch`.
 * Create documentation for NeoVim [example](https://github.com/LukeSmithxyz/voidrice/blob/4679034430ac64bbcb62428e0d77d8dc7987233d/.local/share/larbs/readme.mom)
 * Automate coc.nvim installation
 * Install global Yarn depenendencies
+* Auto install Spacemacs
 * Add config for [taskbook](https://github.com/klaussinani/taskbook)
 
 ## /r/unixporn info

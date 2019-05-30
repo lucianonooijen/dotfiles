@@ -24,6 +24,11 @@ export PATH=$HOME/flutter/bin:$PATH
 # Other exports
 export FZF_BASE=/usr/bin/fzf
 export ANSIBLE_NOCOWS=1 # No cowsay in Ansible, because I'm boring af
+
+# Change indicator for vi-mode
+export MODE_INDICATOR="%{$fg_bold[red]%}<< %{$fg[red]%}VIM KEYS ACTIVATED >>%{$reset_color%}"
+
+# NVM config
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

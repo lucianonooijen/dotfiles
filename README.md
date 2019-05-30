@@ -16,9 +16,8 @@ patches/thinkpad-changes.patch`.
 * For Polybar, add disk usage indicator
 * Fixing the TODOs in `.generalrc`
 * Better installation script
-* Better support for switching between Arch and MacOS
 * Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)
-* Create documentation for i3, NeoVim [example](https://github.com/LukeSmithxyz/voidrice/blob/4679034430ac64bbcb62428e0d77d8dc7987233d/.local/share/larbs/readme.mom)
+* Create documentation for NeoVim [example](https://github.com/LukeSmithxyz/voidrice/blob/4679034430ac64bbcb62428e0d77d8dc7987233d/.local/share/larbs/readme.mom)
 * Automate coc.nvim installation
 * Install global Yarn depenendencies
 * Add config for [taskbook](https://github.com/klaussinani/taskbook)

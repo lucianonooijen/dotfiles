@@ -30,6 +30,8 @@
 .config/kritarc
 .config/menus/
 .config/surf/
+.config/htop/
+.config/darktable/
 .vagrant/
 .mozilla/
 *.log

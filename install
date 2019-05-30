@@ -26,6 +26,7 @@ mkdir ~/dotfiles_backup
 (ls ~/.zprofile 2>/dev/null && mv ~/.zprofile ~/dotfiles_backup) || echo 'zprofile not backupped'
 (ls ~/.zshrc 2>/dev/null && mv ~/.zshrc ~/dotfiles_backup) || echo 'zshrc not backupped'
 (ls ~/.spacemacs 2>/dev/null && mv ~/.spacemacs ~/dotfiles_backup) || echo 'spacemacs not backupped'
+(ls ~/.spacemacs.d 2>/dev/null && mv ~/.spacemacs.d ~/dotfiles_backup) || echo 'spacemacs.d not backupped'
 (ls ~/.readme.mom 2>/dev/null && mv ~/.readme.mom ~/dotfiles_backup) || echo 'readme.mom not backupped'
 mv ~/dotfiles_backup ~/dotfiles_backup_$(date "+%d-%m-%Y-%T")
 
@@ -52,6 +53,7 @@ ln -sv $(pwd)/.Xresources $HOME
 ln -sv $(pwd)/.zprofile $HOME
 ln -sv $(pwd)/.zshrc $HOME
 ln -sv $(pwd)/.spacemacs $HOME
+ln -sv $(pwd)/.spacemacs.d $HOME
 ln -sv $(pwd)/readme.mom $HOME/.readme.mom
 
 # Install oh-my-zsh

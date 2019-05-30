@@ -111,6 +111,10 @@ call plug#end()
     set shiftwidth=4
     set expandtab
 
+" Set correct highlighting for some filetypes
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.groff,*.1 set filetype=groff
+
 " Indicate line 80 and beyond 120
     let &colorcolumn="80,".join(range(120,999),",")
 
@@ -241,7 +245,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
         \ 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css',
         \ 'coc-python', 'coc-rls', 'coc-pairs', 'coc-html', 'coc-yank',
         \ 'coc-jest', 'coc-ccls', 'coc-tslint', 'coc-highlight', 'coc-phpls',
-        \ 'coc-yaml', 'coc-docker', 'coc-go'
+        \ 'coc-yaml', 'coc-docker', 'coc-go', 'coc-import-cost'
         \ ]
     vmap <leader>f <Plug>(coc-format-selected)
     nmap <leader>coc :CocList commands<cr>
@@ -299,9 +303,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Make calcurse notes markdown compatible:
     autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-
-" groff files automatically detected
-    autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=grof
 
 " Readmes autowrap text:
     " autocmd BufRead,BufNewFile *.md set tw=79

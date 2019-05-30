@@ -6,10 +6,14 @@ My personal dotfiles repo
 
 To install, make sure ZSH is installed, then run `./install`
 
+If you are using a Thinkpad (or another low-res screen), run `git apply
+patches/thinkpad-changes.patch`.
+
 ## Things I am working on right now
 
 * Let the zsh vim extension use NeoVim
 * Set Polybar to dynamically load the display name, following [this](https://github.com/jaagr/polybar/wiki) guide
+* For Polybar, add disk usage indicator
 * Fixing the TODOs in `.generalrc`
 * Better installation script
 * Better support for switching between Arch and MacOS

@@ -1,6 +1,6 @@
 # vim: filetype=zsh
 # New
-alias cde="cd ~/eneco"
+alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 8.13"
 
 # Shenanigans
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
@@ -24,12 +24,16 @@ alias rrc="source ~/.generalrc"
 alias sshfix="eval `ssh-agent -s` ssh-add"
 alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
 alias fixbg="feh --bg-fill ~/dotfiles/.config/wall.png"
+alias email="mbsync --all && neomutt && mbsync --all"
+alias ys="yay -S"
 
 # Dotfile edit aliasses
 alias vx="v ~/.Xdefaults"
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
 alias vi3="v ~/.config/i3/config"
 alias vvim="v ~/.vimrc"
+alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
+alias vk="v ~/.config/sxhkd/sxhkdrc"
 
 # Folder aliasses
 alias cdh="cd ~"
@@ -56,7 +60,6 @@ alias excel="scim"
 alias z="zathura"
 alias ka="killall"
 alias reloadrc="source ~/.generalrc"
-alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
 alias mkd="mkdir -pv"
 alias gcss="git commit -v -S --signoff"
 alias gacp="git add -A && git commit -v -S --signoff && git push"
@@ -124,11 +127,8 @@ alias htopcpu="htop --sort-key=PERCENT_CPU"
 alias htopmem="htop --sort-key=PERCENT_MEM"
 
 # System Maintainence
-alias mw="~/.config/mutt/mutt-wizard.sh"
-alias muttwizard="~/.config/mutt/mutt-wizard.sh"
 alias sdn="sudo shutdown now"
 alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
-alias pi="bash ~/.larbs/wizard/wizard.sh"
 
 # Kubernetes
 alias hm="helm"

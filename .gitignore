@@ -32,6 +32,7 @@
 .config/surf/
 .config/htop/
 .config/darktable/
+.config/GIMP/
 .vagrant/
 .mozilla/
 *.log

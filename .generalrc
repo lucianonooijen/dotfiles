@@ -65,6 +65,7 @@ alias gcss="git commit -v -S --signoff"
 alias gacp="git add -A && git commit -v -S --signoff && git push"
 alias gfl="gf && gl"
 alias perm="stat -c '%a %n' *"
+alias json="python -mjson.tool"
 
 # Custom aliasses
 alias myip="curl http://ipecho.net/plain; echo"

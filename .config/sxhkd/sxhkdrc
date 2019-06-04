@@ -12,7 +12,7 @@ super + i
 super + y
     $TERMINAL -e calcurse # Calendar
 super + w
-    $TERMINAL -r nmtui # Internet GUI
+    $TERMINAL -e nmtui # Internet GUI
 super + shift + w
     $BROWSER
 super + shift + a

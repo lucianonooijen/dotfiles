@@ -245,7 +245,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
         \ 'coc-tsserver', 'coc-eslint', 'coc-json', 'coc-prettier', 'coc-css',
         \ 'coc-python', 'coc-rls', 'coc-pairs', 'coc-html', 'coc-yank',
         \ 'coc-jest', 'coc-ccls', 'coc-tslint', 'coc-highlight', 'coc-phpls',
-        \ 'coc-yaml', 'coc-docker', 'coc-go', 'coc-import-cost'
+        \ 'coc-yaml', 'coc-docker', 'coc-go', 'coc-import-cost',
+        \ 'coc-marketplace',
         \ ]
     vmap <leader>f <Plug>(coc-format-selected)
     nmap <leader>coc :CocList commands<cr>

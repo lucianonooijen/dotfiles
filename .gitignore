@@ -33,6 +33,7 @@
 .config/htop/
 .config/darktable/
 .config/GIMP/
+.config/sanity/
 .vagrant/
 .mozilla/
 *.log

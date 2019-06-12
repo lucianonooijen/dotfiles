@@ -113,6 +113,7 @@ call plug#end()
 
 " Set correct highlighting for some filetypes
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    autocmd BufNewFile,BufRead .eslintrc set filetype=json
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.groff,*.1 set filetype=groff
 
 " Indicate line 80 and beyond 120

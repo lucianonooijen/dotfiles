@@ -12,9 +12,6 @@ patches/thinkpad-changes.patch`.
 ## Things I am working on right now
 
 * Fixing Emacs imports
-* Let the zsh vim extension use NeoVim
-* Set Polybar to dynamically load the display name, following [this](https://github.com/jaagr/polybar/wiki) guide
-* For Polybar, add disk usage indicator
 * Fixing the TODOs in `.generalrc`
 * Better installation script
 * Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)

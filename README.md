@@ -12,7 +12,6 @@ patches/thinkpad-changes.patch`.
 ## Things I am working on right now
 
 * Fixing Emacs imports
-* Fixing the TODOs in `.generalrc`
 * Better installation script
 * Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)
 * Create documentation for NeoVim [example](https://github.com/LukeSmithxyz/voidrice/blob/4679034430ac64bbcb62428e0d77d8dc7987233d/.local/share/larbs/readme.mom)

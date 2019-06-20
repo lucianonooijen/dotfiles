@@ -7,6 +7,7 @@
 xset r rate 200 50 & # Faster repeat on keyboard
 sxhkd & # Set hotkeys
 dunst & # For notifications
+xcompmgr # For transparency
 setxkbmap -option caps:super && killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape' & # Set Caps to Mod/Escape
 xmodmap -e 'keycode 135 = Super_R' & # Properties button extra Mod/Escape
 

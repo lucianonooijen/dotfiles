@@ -45,22 +45,19 @@ super + Insert
     showclip
 
 # Recording and screenshots
+Print
+    scrot
+shift + Print
+    scrot -u
+super + Print
+    dmenurecord
+super + Scroll_Lock
+    killall screenkey || screenkey
+super + Delete
+    dmenurecord kill
 super + shift + c
     camtoggle
-# super +
 
-# TODO
-# Print
-# 	maim pic-full-$(date '+%y%m%d-%H%M-%S').png
-# Pick screenshot type
-#shift + Print
-#	maimpick
-# Record audio or video
-#super + Print
-#	dmenurecord
-# kill active recording
-#super + Delete
-#dmenurecord kill
 
 # Lock, shutdown, hibernate, etc.
 super + x

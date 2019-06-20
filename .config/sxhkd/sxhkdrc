@@ -20,7 +20,7 @@ super + shift + a
 super + grave
     $TERMINAL -e dmenuunicode
 super + n
-    $TERMINAL -e newspod # TODO: Move to newsboat
+    $TERMINAL -e newsboat # TODO: Move to newsboat
 
 # Email
 super + e
@@ -28,11 +28,11 @@ super + e
 super + shift + e
     mbsync --all # TODO: Does this work without the $TERMINAL
 
-# TODO: Move to dmenu, now Rofi
+# Dmenu
 super + control + s
-    rofi -show ssh
+    rofi -show ssh # TODO: Move to Rofi
 super + d
-    rofi -show run -modi drun -show-icons -sidebar-mode -terminal st
+    dmenu_run
 
 # Dropdown windows
 super + u

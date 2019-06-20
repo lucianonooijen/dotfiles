@@ -70,6 +70,8 @@ super + F4
     prompt "Hibernate computer?" "$hibernate"
 super + shift + F4
     prompt "Logout?" "$logout"
+super + shift + F2
+    $TERMINAL killall sxhkd; echo 'Killed sxhkd'; sxhkd &;
 
 # Function keys
 super + F1

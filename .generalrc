@@ -288,5 +288,3 @@ vf() {
     v $(f)
 }
 
-# TODO: Make some JSON cat script
-

@@ -11,6 +11,7 @@ patches/thinkpad-changes.patch`.
 
 ## Things I am working on right now
 
+* Add Redshift support
 * Fixing Emacs imports
 * Better installation script
 * Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)

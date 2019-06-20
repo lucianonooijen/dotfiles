@@ -98,7 +98,64 @@ specific programs or concepts directly from YouTube.
 .PP
 All of the bindings below are in either r\f(CW~/.config/sxhkd/sxhkdrrc\fP (for general bindings) or in \f(CW~/.config/i3/config\fP (for i3-specific commands).
 You can change them in either of these files to what you want and both files can be accessed respectively by running \f(CWcfk\fP or \f(CWcfi\fP respectively in the terminal.
-.HEADING 2 "Window basics"
+.HEADING 2 "Window basics dwm"
+.PP
+Notice the case sensitivity of the shortcuts\c
+.FOOTNOTE
+To type capital letters, hold down the \f(CWShift\fP key\(emthat might sound like an obvious and condescending thing to tell you, but there have literally been multiple people (Boomers) who have emailed me asking how to type a capital letter since caps lock isn't enabled.
+.FOOTNOTE OFF
+ , Be sure you play around with these. Be flexible with the basic commands and the system will grow on you quick.
+.LI
+.ITEM
+\f(CWMod+Enter\fP \(en Spawn terminal (the default terminal is \f(CWst\fP; run \f(CWman st\fP for more.)
+.ITEM
+\f(CWMod+q\fP \(en Close window
+.ITEM
+\f(CWMod+Q\fP \(en Force close window
+.ITEM
+\f(CWMod+d\fP \(en dmenu (For running commands or programs without shortcuts)
+.ITEM
+\f(CWMod+t\fP \(en Tiling mode (active by default)
+.ITEM
+\f(CWMod+f\fP \(en Monocle mode (cycle through windows fullscreen)
+.ITEM
+\f(CWMod+g\fP \(en Grid mode
+.ITEM
+\f(CWMod+s\fP \(en Fibbonacci mode
+\f(CWMod+S\fP \(en Fibbonacci mode to right bottom corner
+.ITEM
+\f(CWMod+h/j/k/l\fP \(en Move to different windows
+.ITEM
+\f(CWMod+H/J/K/L\fP \(en Move a window around
+.ITEM
+\f(CWMod+Y/U/I/O\fP \(en Resize windows
+.ITEM
+\f(CWMod+/\fP \(en Spawn vertical terminal
+.ITEM
+\f(CWMod+'\fP \(en Spawn horizontal terminal
+.ITEM
+\f(CWMod+s/S\fP \(en Increase/decrease inner gaps
+.ITEM
+\f(CWMod+z/Z\fP \(en Increase/decrease outer gaps
+.ITEM
+\f(CWMod+D\fP \(en Reduce gaps to 0 pixels
+.ITEM
+\f(CWMod+T\fP \(en Restore gaps to default (15 pixels)
+.ITEM
+\f(CWMod+Shift+Space\fP \(en Make a window float (it will still be resizeable)
+.ITEM
+\f(CWMod+Space\fP \(en Switch focus from a floating window to a non-floating one (or
+  vice versa)
+.ITEM
+\f(CWMod+o\fP \(en Make floating window sticky (will stay on active workspace)
+.ITEM
+\f(CWMod+b\fP \(en Toggle status bar
+.ITEM
+\f(CWMod+B\fP \(en Toggle window float in bottom left corner (good for video watched intermittently)
+.ITEM
+\f(CWMod+N\fP \(en Same as above, but for the bottom right corner.
+.LIST OFF
+.HEADING 2 "Window basics i3"
 .PP
 Notice the case sensitivity of the shortcuts\c
 .FOOTNOTE

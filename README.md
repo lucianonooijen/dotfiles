@@ -11,6 +11,7 @@ patches/thinkpad-changes.patch`.
 
 ## Things I am working on right now
 
+* Adding a status bar for dwm
 * Add Redshift support
 * Fixing Emacs imports
 * Better installation script

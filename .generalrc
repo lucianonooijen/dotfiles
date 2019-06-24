@@ -34,6 +34,7 @@ alias vi3="v ~/.config/i3/config"
 alias vvim="v ~/.vimrc"
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
 alias vk="v ~/.config/sxhkd/sxhkdrc"
+alias vd="v ~/.scripts/dwm-statusbar/dwmbar"
 
 # Folder aliasses
 alias cdh="cd ~"

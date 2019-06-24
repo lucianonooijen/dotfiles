@@ -1,6 +1,6 @@
-*.font: Liberation Mono:pixelsize=24:antialias=true:autohint=true;
-font pango:DejaVu Sans Mono 18
-Xft.dpi: 108
+*.font: Liberation Mono:pixelsize=12:antialias=true:autohint=true;
+font pango:DejaVu Sans Mono 12
+Xft.dpi: 64
 !Xft.dpi: 136
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
@@ -57,7 +57,7 @@ URxvt.intensityStyles:	false
 URxvt.background:       [70]#000000
 URxvt.depth:		32
 
-URxvt.font:         xft:FiraMono-Regular:size=18
+URxvt.font:         xft:FiraMono-Regular:size=12
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
 
@@ -83,7 +83,7 @@ rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
 rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
 rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
 
-rofi.font: Liberation Mono 24
+rofi.font: Liberation Mono 12
 rofi.fake-transparency:	true
 rofi.lines:	10
 rofi.bw: 0

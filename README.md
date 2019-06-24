@@ -6,9 +6,6 @@ My personal dotfiles repo
 
 To install, make sure ZSH is installed, then run `./install`
 
-If you are using a Thinkpad (or another low-res screen), run `git apply
-patches/thinkpad-changes.patch`.
-
 ## Things I am working on right now
 
 * Adding a status bar for dwm

@@ -7,6 +7,7 @@ mkdir ~/dotfiles_backup
 (ls ~/.bash_profile 2>/dev/null && mv ~/.bash_profile ~/dotfiles_backup) || echo 'bash_profile not backupped'
 (ls ~/.bashrc 2>/dev/null && mv ~/.bashrc ~/dotfiles_backup) || echo 'bashrc not backupped'
 (ls ~/.config 2>/dev/null && mv ~/.config ~/dotfiles_backup) || echo 'config dir not backupped'
+(ls ~/.bc 2>/dev/null && mv ~/.bc ~/dotfiles_backup) || echo 'bc config not backupped'
 (ls ~/.editorconfig 2>/dev/null && mv ~/.editorconfig ~/dotfiles_backup) || echo 'editorconfig not backupped'
 (ls ~/.emoji 2>/dev/null && mv ~/.emoji ~/dotfiles_backup) || echo 'emoji not backupped'
 (ls ~/.eslintrc 2>/dev/null && mv ~/.eslintrc ~/dotfiles_backup) || echo 'eslintrc not backupped'
@@ -34,6 +35,7 @@ mv ~/dotfiles_backup ~/dotfiles_backup_$(date "+%d-%m-%Y-%T")
 ln -sv $(pwd)/.bash_profile $HOME
 ln -sv $(pwd)/.bashrc $HOME
 ln -sv $(pwd)/.config $HOME
+ln -sv $(pwd)/.bc $HOME
 ln -sv $(pwd)/.editorconfig $HOME
 ln -sv $(pwd)/.emoji $HOME
 ln -sv $(pwd)/.eslintrc $HOME

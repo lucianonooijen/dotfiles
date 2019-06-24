@@ -34,6 +34,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 [ ! -f ~/.shortcuts ] && shortcuts >/dev/null 2>&1
 
 [ -f ~/.bashrc ] && source ~/.bashrc
+[ -f /home/luciano/.bc ] && export BC_ENV_ARGS="/home/luciano/.bc"
 
 # Start graphical server if i3 not already running.
 if [ "$(tty)" = "/dev/tty1" ]; then

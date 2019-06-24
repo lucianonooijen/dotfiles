@@ -1,0 +1,82 @@
+{
+
+    "workbench.colorTheme": "Monokai",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "DejaVu Mono, Menlo, Monaco, 'Courier New', monospace, mononoki Nerd Font Mono, Source Code Pro for Powerline, mononoki Nerd Font Mono",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "monospace",
+    "material-icon-theme.showUpdateMessage": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "terminal.integrated.shell.osx": "zsh",
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all",
+    "prettier.tabWidth": 4,
+    "editor.wordWrap": "on",
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": false,
+        "**/.hg": true,
+        "**/CVS": true
+    },
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    },
+    "markdownlint.config": {
+        "MD001": false,
+        "MD025": false
+    },
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "newUntitledFile",
+    "html.format.wrapLineLength": 0,
+    "sasslint.packageManager": "yarn",
+    "gitlens.keymap": "none",
+    "sync.removeExtensions": false,
+    "sync.syncExtensions": true,
+    "extensions.ignoreRecommendations": false,
+    "git.autofetch": true,
+    "yaml.format.enable": true,
+    "gitlens.historyExplorer.enabled": true,
+    "typescript.reportStyleChecksAsWarnings": false,
+    "scss.lint.float": "warning",
+    "scss.lint.idSelector": "warning",
+    "scss.lint.zeroUnits": "error",
+    "prettier.eslintIntegration": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.detectIndentation": false,
+    "editor.lineNumbers": "relative",
+    "vim.disableExtension": true,
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.startInInsertMode": true,
+    "[source.jsx.styled]": {},
+    "gitlens.codeLens.enabled": false,
+    "editor.rulers": [
+        80, 100, 120
+    ],
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.activeIconPack": "react_redux",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
+

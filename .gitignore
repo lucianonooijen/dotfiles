@@ -34,6 +34,7 @@
 .config/darktable/
 .config/GIMP/
 .config/sanity/
+.config/gconf/
 .vagrant/
 .mozilla/
 *.log

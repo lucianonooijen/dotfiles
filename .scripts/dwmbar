@@ -72,12 +72,20 @@ const getStatusbar = () => {
     return statusbar;
 }
 
-// Run the script each second
-setInterval(() => {
+const setStatusbar = () => {
     const statusbarBase = getStatusbar();
     const statusbar = ` ${statusbarBase}`;
 	//console.log(statusbar);
     exec(`xsetroot -name "${statusbar}"`);
+}
+
+// Run the script each second
+setInterval(() => {
+    try {
+        setStatusbar();
+    } catch (e) {
+        // Fail silently
+    }
 }, 1000)
 
 // Cronjob like tasks

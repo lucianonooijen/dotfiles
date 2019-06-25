@@ -8,7 +8,8 @@ To install, make sure ZSH is installed, then run `./install`
 
 ## Things I am working on right now
 
-* Adding a status bar for dwm
+* Improving zsh loading speed
+* Changing /bin/sh to dash
 * Add Redshift support
 * Fixing Emacs imports
 * Better installation script

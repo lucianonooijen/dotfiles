@@ -121,7 +121,10 @@ To type capital letters, hold down the \f(CWShift\fP key\(emthat might sound lik
 .ITEM
 \f(CWMod+g\fP \(en Grid mode
 .ITEM
+\f(CWMod+m\fP \(en Floating master centered mode
+.ITEM
 \f(CWMod+s\fP \(en Fibbonacci mode
+.ITEM
 \f(CWMod+S\fP \(en Fibbonacci mode to right bottom corner
 .ITEM
 \f(CWMod+h/j/k/l\fP \(en Move to different windows

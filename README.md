@@ -8,6 +8,7 @@ To install, make sure ZSH is installed, then run `./install`
 
 ## Things I am working on right now
 
+* Make dwm keys the same as in readme
 * Improving zsh loading speed
 * Changing /bin/sh to dash
 * Add Redshift support

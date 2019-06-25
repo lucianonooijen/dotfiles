@@ -76,7 +76,7 @@ const getStatusbar = () => {
 setInterval(() => {
     const statusbarBase = getStatusbar();
     const statusbar = ` ${statusbarBase}`;
-	console.log(statusbar);
+	//console.log(statusbar);
     exec(`xsetroot -name "${statusbar}"`);
 }, 1000)
 

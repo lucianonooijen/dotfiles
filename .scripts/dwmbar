@@ -4,7 +4,19 @@ const { exec, execSync } = require('child_process');
 
 const delimiter = '| ';
 
-const hostname = `hostname`;
+const cpu = `
+    echo "" &&
+    top -bn1 | grep "Cpu(s)" | \
+    sed "s/.*, *\\([0-9.]*\\)%* id.*/\\1/" | \
+    awk '{print 100 - $1}' | \
+    xargs -I {} printf "%4.4s" "{}" &&
+    echo '%'
+`;
+
+const memory = `
+    echo "" &&
+    free -h | grep Mem | awk '{ print $3 " / " $2 }' | sed 's/Gi/G/g'
+`;
 
 const weathercheck = `
     [ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
@@ -50,9 +62,13 @@ const date = `date '+%Y %b %d (%a) %I:%M:%S%p %:z'`;
 const runCommand = command => execSync(command).toString();
 
 const getStatusbar = () => {
-    const commands = [hostname, weather, wifi, email, battery, date];
+    const commands = [weather, cpu, memory, wifi, email, battery, date];
     const statusbarArr = commands.reduce((acc, val) => [...acc, runCommand(val)], []);
-    const statusbar = statusbarArr.join(delimiter).replace(/\n/g, ' ');
+    const statusbar = statusbarArr
+		.join(delimiter)
+		.replace(/\n/g, ' ')
+		.replace(/\s{2,}/g, ' ')
+		.replace(/\s*%/g, '%');
     return statusbar;
 }
 
@@ -60,6 +76,7 @@ const getStatusbar = () => {
 setInterval(() => {
     const statusbarBase = getStatusbar();
     const statusbar = ` ${statusbarBase}`;
+	console.log(statusbar);
     exec(`xsetroot -name "${statusbar}"`);
 }, 1000)
 

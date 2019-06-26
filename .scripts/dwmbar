@@ -1,48 +1,50 @@
-#!/usr/bin/env node
+#!/bin/sh
 
-const { exec, execSync } = require('child_process');
-
-const delimiter = '| ';
-
-const cpu = `
+cpu() {
     echo "" &&
     top -bn1 | grep "Cpu(s)" | \
-    sed "s/.*, *\\([0-9.]*\\)%* id.*/\\1/" | \
-    awk '{print 100 - $1}' | \
-    xargs -I {} printf "%4.4s" "{}" &&
+        sed "s/.*, *\\([0-9.]*\\)%* id.*/\\1/" | \
+        awk '{print 100 - $1}' | \
+        xargs -I {} printf "%4.4s" "{}" &&
     echo '%'
-`;
+}
 
-const memory = `
+memory() {
     echo "" &&
-    free -h | grep Mem | awk '{ print $3 " / " $2 }' | sed 's/Gi/G/g'
-`;
+    free -h | \
+        grep Mem | \
+        awk '{ print $3 "/" $2 }' | \
+        sed 's/Gi/G/g'
+}
 
-const weathercheck = `
-    [ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
-        ping -q -c 1 1.1.1.1 >/dev/null &&
-        curl -s "wttr.in/$location" > "$HOME/.local/share/weatherreport" &&
-        notify-send "🌞 Weather" "New weather forecast for today."
-`;
+weather() {
+    sed '16q;d' "$HOME/.local/share/weatherreport" | \
+        grep -wo "[0-9]*%" | \
+        sort -n | \
+        sed -e '$!d' | \
+        sed -e "s/^/ /g" | \
+        tr -d '\n' &&
+    sed '13q;d' "$HOME/.local/share/weatherreport" | \
+        grep -o "m\\(-\\)*[0-9]\\+" | \
+        sort -n -t 'm' -k 2n | \
+        sed -e 1b -e '$!d' | \
+        tr '\n|m' ' ' | \
+        awk '{print " ",$1 "°","",$2 "°"}'
+}
 
-const weather = `
-    [ "$(stat -c %y "$HOME/.local/share/weatherreport" 2>/dev/null | cut -d' ' -f1)" = "$(date '+%Y-%m-%d')" ] &&
-        sed '16q;d' "$HOME/.local/share/weatherreport" | grep -wo "[0-9]*%" | sort -n | sed -e '$!d' | sed -e "s/^/ /g" | tr -d '\n' &&
-        sed '13q;d' "$HOME/.local/share/weatherreport" | grep -o "m\\(-\\)*[0-9]\\+" | sort -n -t 'm' -k 2n | sed -e 1b -e '$!d' | tr '\n|m' ' ' | awk '{print " ",$1 "°","",$2 "°"}'
-
-`;
-
-const wifi = `
+wifi() {
     grep "^\\s*w" /proc/net/wireless | awk '{ print "", int($3 * 100 / 70) "%" }'
     sed "s/down//;s/up//" /sys/class/net/e*/operstate
-`;
+}
 
-const email = `
+email() {
     command -v mw >/dev/null 2>&1 &&
-    du -a ~/.local/share/mail/*/INBOX/new/* 2>/dev/null | wc -l | sed 's/^/:/'
-`;
+    du -a ~/.local/share/mail/*/INBOX/new/* 2>/dev/null | \
+        wc -l | \
+        sed 's/^/:/'
+}
 
-const battery = `
+battery() {
     for x in /sys/class/power_supply/BAT?/capacity;
     do
     case "$(cat $x)" in
@@ -55,40 +57,47 @@ const battery = `
     cat "$x"
     echo "%"
     done
-`;
-
-const date = `date '+%Y %b %d (%a) %I:%M:%S%p %:z'`;
-
-const runCommand = command => execSync(command).toString();
-
-const getStatusbar = () => {
-    const commands = [weather, cpu, memory, wifi, email, battery, date];
-    const statusbarArr = commands.reduce((acc, val) => [...acc, runCommand(val)], []);
-    const statusbar = statusbarArr
-		.join(delimiter)
-		.replace(/\n/g, ' ')
-		.replace(/\s{2,}/g, ' ')
-		.replace(/\s*%/g, '%');
-    return statusbar;
 }
 
-const setStatusbar = () => {
-    const statusbarBase = getStatusbar();
-    const statusbar = ` ${statusbarBase}`;
-	//console.log(statusbar);
-    exec(`xsetroot -name "${statusbar}"`);
+bardate() {
+    date '+%Y %b %d (%a) %I:%M:%S%p %:z'
 }
 
-// Run the script each second
-setInterval(() => {
-    try {
-        setStatusbar();
-    } catch (e) {
-        // Fail silently
-    }
-}, 1000)
+delim () {
+    echo ' | '
+}
 
-// Cronjob like tasks
-setInterval(() => {
-    runCommand(weathercheck);
-}, 3600 * 1000)
+statusbar() {
+    echo ' '
+    weather
+        delim
+    cpu
+        delim
+    memory
+        delim
+    wifi
+        delim
+    email
+        delim
+    battery
+        delim
+    bardate
+}
+
+statusbarstring () {
+    echo "$(statusbar | tr '\n' ' ' | tr -s ' ' | sed 's/ %/%/')"
+}
+
+update () {
+    xsetroot -name "$(statusbarstring)" &
+    wait
+}
+
+while :; do
+    #time update # For debugging/development
+    update
+	sleep 0.5 &
+    wait
+done
+
+

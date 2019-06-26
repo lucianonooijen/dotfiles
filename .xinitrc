@@ -7,10 +7,11 @@
 xset r rate 200 50 & # Faster repeat on keyboard
 sxhkd & # Set hotkeys
 dunst & # For notifications
+protonmail-bridge -c & # For connecting Mutt to Protonmail
 xcompmgr & # For transparency
+~/.scripts/dwmbar & # Run dwmbar script
 setxkbmap -option caps:super && killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape' & # Set Caps to Mod/Escape
 xmodmap -e 'keycode 135 = Super_R' & # Properties button extra Mod/Escape
-[ -f ~/.scripts/dwmbar ] && ~/.scripts/dwmbar &
 
 # wm=$(dialog --title "Which WM do you want to use?" --menu "Please select a WM" 0 0 2 "classic" "i3" "new" "dwm")
 while :; do

@@ -6,6 +6,9 @@ My personal dotfiles repo
 
 To install, make sure ZSH is installed, then run `./install`
 
+When running GNU+Linux with dwm, add the following to your crontab:
+`@hourly /home/<your_username>/.scripts/weatherupdate` with your username.
+
 ## Things I am working on right now
 
 * Make dwm keys the same as in readme

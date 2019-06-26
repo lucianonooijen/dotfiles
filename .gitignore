@@ -35,6 +35,9 @@
 .config/GIMP/
 .config/sanity/
 .config/gconf/
+.config/autostart/
+.config/protonmail/
+
 .vagrant/
 .mozilla/
 *.log

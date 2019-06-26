@@ -112,7 +112,7 @@ call plug#end()
     set expandtab
 
 " Set correct highlighting for some filetypes
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
     autocmd BufNewFile,BufRead .eslintrc set filetype=json
     autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.groff,*.1 set filetype=groff
 

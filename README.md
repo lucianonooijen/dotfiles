@@ -14,7 +14,6 @@ When running GNU+Linux with dwm, add the following to your crontab:
 * Make dwm keys the same as in readme
 * Improving zsh loading speed
 * Changing /bin/sh to dash
-* Add Redshift support
 * Fixing Emacs imports
 * Better installation script
 * Create a dotfile CLI thingy (for updating and such, https://github.com/wookayin/dotfiles)

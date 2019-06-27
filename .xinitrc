@@ -7,7 +7,7 @@
 xset r rate 200 50 & # Faster repeat on keyboard
 sxhkd & # Set hotkeys
 dunst & # For notifications
-protonmail-bridge -c & # For connecting Mutt to Protonmail
+redshift -P & # For blue light filter during evening/night
 xcompmgr & # For transparency
 ~/.scripts/dwmbar & # Run dwmbar script
 setxkbmap -option caps:super && killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape' & # Set Caps to Mod/Escape

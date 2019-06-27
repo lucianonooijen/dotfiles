@@ -37,7 +37,8 @@
 .config/gconf/
 .config/autostart/
 .config/protonmail/
-
+.config/Hyper
+.config/mimeapps.list
 .vagrant/
 .mozilla/
 *.log

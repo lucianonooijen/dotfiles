@@ -46,3 +46,4 @@ sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 #tty | grep tty >/dev/null && wal -Rns
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"

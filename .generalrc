@@ -66,6 +66,7 @@ alias reloadrc="source ~/.generalrc"
 alias mkd="mkdir -pv"
 alias gcss="git commit -v -S --signoff"
 alias gacp="git add -A && git commit -v -S --signoff && git push"
+alias glc="glog -n 1 | awk '{print \$2}'" # Git Last Commit
 alias gfl="gf && gl"
 alias perm="stat -c '%a %n' *"
 alias json="python -mjson.tool"

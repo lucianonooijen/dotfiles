@@ -34,6 +34,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'chr4/nginx.vim'
+Plug 'elzr/vim-json'
 
 " Javascript
 Plug 'pangloss/vim-javascript'

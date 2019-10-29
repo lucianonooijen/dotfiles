@@ -1,6 +1,7 @@
 # vim: filetype=zsh
 # New
 alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 8.13"
+alias ggg="lazygit"
 
 # Shenanigans
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"

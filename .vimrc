@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 " General
 Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
+Plug 'wakatime/vim-wakatime'
 
 " Layout
 Plug 'scrooloose/nerdtree'

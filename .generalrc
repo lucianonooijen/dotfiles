@@ -1,6 +1,6 @@
 # vim: filetype=zsh
 # New
-alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 8.13"
+alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 12"
 alias ggg="lazygit"
 
 # Shenanigans

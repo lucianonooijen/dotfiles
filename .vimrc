@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 " General
 Plug 'editorconfig/editorconfig-vim'
 Plug '/usr/local/opt/fzf'
-Plug 'wakatime/vim-wakatime'
 
 " Layout
 Plug 'scrooloose/nerdtree'
@@ -49,15 +48,17 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 " Completion, 'run pip3 install --user pynvim', then ':UpdateRemotePlugins'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 0
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
+" let g:deoplete#enable_at_startup = 0
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 " Archive to maybe use later (again)
 " Plug 'vim-syntastic/syntastic'

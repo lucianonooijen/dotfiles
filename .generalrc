@@ -1,6 +1,5 @@
 # vim: filetype=zsh
 # New
-alias cpe="rm -rf /Users/luciano/eneco/eneco-lift-up/Sources/Solution/Feature/Omschakeladvies/code/Patterns/ && cp -r /Users/luciano/Git/eneco-omschakeladvies/src/Feature/Omschakeladvies/code/Patterns /Users/luciano/eneco/eneco-lift-up/Sources/Solution/Feature/Omschakeladvies/code/"
 alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 12"
 alias ggg="lazygit"
 

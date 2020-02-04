@@ -2,6 +2,7 @@
 # New
 alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 12"
 alias ggg="lazygit"
+alias br="broot -hs"
 
 # Shenanigans
 alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"

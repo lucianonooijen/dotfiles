@@ -39,3 +39,4 @@ eval $(thefuck --alias)
 
 # Load generalrc latest, to Oh My ZSH commands
 source ~/.generalrc
+

@@ -1,6 +1,6 @@
 # vim: filetype=zsh
 # New
-alias cde="cd ~/eneco/eneco-lift-up/Sources/Solution; nvm use 12"
+alias cpcd="pwd | xargs -I {} echo 'cd {}' | pbcopy"
 alias ggg="lazygit"
 alias br="broot -hs"
 
@@ -66,6 +66,7 @@ alias z="zathura"
 alias ka="killall"
 alias reloadrc="source ~/.generalrc"
 alias mkd="mkdir -pv"
+alias gmnff="git merge --no-ff"
 alias gcss="git commit -v -S --signoff"
 alias gacp="git add -A && git commit -v -S --signoff && git push"
 alias glc="glog -n 1 | awk '{print \$2}'" # Git Last Commit

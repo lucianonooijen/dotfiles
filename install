@@ -15,6 +15,7 @@ mkdir ~/dotfiles_backup
 (ls ~/.mozilla 2>/dev/null && mv ~/.mozilla ~/dotfiles_backup) || echo '.mozilla not backupped'
 (ls ~/.oh-my-zsh 2>/dev/null && mv ~/.oh-my-zsh ~/dotfiles_backup) || echo 'oh-my-zsh not backupped'
 (ls ~/.profile 2>/dev/null && mv ~/.profile ~/dotfiles_backup) || echo 'profile not backupped'
+(ls ~/.psqlrc 2>/dev/null && mv ~/.psqlrc ~/dotfiles_backup) || echo 'psqlrc not backupped'
 (ls ~/.scripts 2>/dev/null && mv ~/.scripts ~/dotfiles_backup) || echo 'scripts not backupped'
 (ls ~/.shortcuts 2>/dev/null && mv ~/.shortcuts ~/dotfiles_backup) || echo 'shortcuts not backupped'
 (ls ~/.tmux.conf 2>/dev/null && mv ~/.tmux.conf ~/dotfiles_backup) || echo 'tmux conf not backupped'
@@ -43,6 +44,7 @@ ln -sv $(pwd)/.generalrc $HOME
 ln -sv $(pwd)/.mozilla $HOME
 ln -sv $(pwd)/.oh-my-zsh $HOME
 ln -sv $(pwd)/.profile $HOME
+ln -sv $(pwd)/.psqlrc $HOME
 ln -sv $(pwd)/.scripts $HOME
 ln -sv $(pwd)/.shortcuts $HOME
 ln -sv $(pwd)/.tmux.conf $HOME

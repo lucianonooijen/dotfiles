@@ -18,9 +18,10 @@ test -e "${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source 
 
 # Setting the $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH="$PATH:$(yarn global bin)"
-export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/.cargo/bin:$PATH # Rust/Cargo
+export PATH="$PATH:$(yarn global bin)" # Yarn global packages
+export PATH=$PATH:$(go env GOPATH)/bin # Go binaries
+export PATH="$PATH:$HOME/flutter/bin" # Flutter
 
 # Other exports
 export FZF_BASE=/usr/bin/fzf

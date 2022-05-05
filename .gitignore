@@ -20,6 +20,7 @@
 .config/pulse/
 .config/gatsby
 .config/inkscape
+.config/iterm2
 .config/msmtp/
 .config/mutt
 .config/mutt-wizard

@@ -43,6 +43,7 @@ alias vd="v ~/.scripts/dwm-statusbar/dwmbar"
 alias cdh="cd ~"
 alias cdg="cd ~/Git"
 alias cdd="cd ~/dotfiles"
+alias cdc="cd ~/Clients/coolgames"
 
 # Shortcuts
 alias c="clear"
@@ -66,11 +67,6 @@ alias z="zathura"
 alias ka="killall"
 alias reloadrc="source ~/.generalrc"
 alias mkd="mkdir -pv"
-alias gmnff="git merge --no-ff"
-alias gcss="git commit -v -S --signoff"
-alias gacp="git add -A && git commit -v -S --signoff && git push"
-alias glc="glog -n 1 | awk '{print \$2}'" # Git Last Commit
-alias gfl="gf && gl"
 alias perm="stat -c '%a %n' *"
 alias json="python -mjson.tool"
 alias calc="bc -q"
@@ -173,18 +169,22 @@ alias ga="git add"
 alias gaa="git add --all"
 alias ga.="git add ."
 alias gapa="git add --patch"
+alias gacp="git add -A && git commit -v -S --signoff && git push"
 alias gb="git branch"
 alias gc="git commit -v"
 alias gcm="git commit -m"
+alias gcss="git commit -v -S --signoff"
 alias gcb="git checkout -b"
 alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias gd="git diff"
 alias gm="git merge"
+alias gmnff="git merge --no-ff"
 alias gf="git fetch"
 alias gl="git pull"
 alias gp="git push"
 # alias ggp="git push origin $(git branch | grep \* | cut -d ' ' -f2)"
+alias ggpf="ggp --force-with-lease"
 alias glg="git log --stat --max-count = 10"
 alias glog="git log --oneline --decorate --color --graph"
 alias gloga="git log --decorate --color --graph --all"
@@ -194,6 +194,7 @@ alias gsta="git stash"
 alias gsu="git submodule update"
 alias gwch="git whatchanged -p --abbrev-commit --pretty = medium"
 alias gog="git log  --abbrev-commit --name-status --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias glc="glog -n 1 | awk '{print \$2}'" # Git Last Commit
 alias gml="git log --stat --color --decorate --all --oneline"
 alias gdw="git diff --word-diff=color"
 
@@ -278,10 +279,10 @@ mongo() {
   mongoLabel=`docker ps | grep mongo | awk '{print $NF}'`
   docker exec -it $mongoLabel mongo "$@"
 }
-redis() {
-  redisLabel=`docker ps | grep redis | awk '{print $NF}'`
-  docker exec -it $redisLabel redis-cli
-}
+# redis() {
+#   redisLabel=`docker ps | grep redis | awk '{print $NF}'`
+#   docker exec -it $redisLabel redis-cli
+# }
 
 # cURL cheatsheet
 cheat() {

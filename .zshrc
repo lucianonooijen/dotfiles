@@ -6,26 +6,25 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 ZSH_THEME="luciano"
 plugins=(
   git vi-mode fzf
-  #zsh-autosuggestions zsh-syntax-highlighting
-  #node nvm yarn kubectl
+  # zsh-autosuggestions
+  # zsh-syntax-highlighting
+  # node
+  # nvm
+  # yarn
+  # kubectl
 )
 
-export ZSH=/Users/luciano/.oh-my-zsh # On Arch, run `sudo ln -s /home /Users`
+export ZSH="${HOME}/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-test -e "${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" && source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Setting the $PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH # Rust/Cargo
 export PATH="$PATH:$(yarn global bin)" # Yarn global packages
 export PATH=$PATH:$(go env GOPATH)/bin # Go binaries
-export PATH="$PATH:$HOME/flutter/bin" # Flutter
-
-# Other exports
-export FZF_BASE=/usr/bin/fzf
-export ANSIBLE_NOCOWS=1 # No cowsay in Ansible, because I'm boring af
 
 # Change indicator for vi-mode
 export MODE_INDICATOR="%{$fg_bold[red]%}<< %{$fg[red]%}VIM KEYS ACTIVATED >>%{$reset_color%}"
@@ -41,3 +40,5 @@ eval $(thefuck --alias)
 # Load generalrc latest, to Oh My ZSH commands
 source ~/.generalrc
 
+# MacTex CLI
+eval "$(/usr/libexec/path_helper)"

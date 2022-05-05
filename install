@@ -36,29 +36,16 @@ mv ~/dotfiles_backup ~/dotfiles_backup_$(date "+%d-%m-%Y-%T")
 ln -sv $(pwd)/.bash_profile $HOME
 ln -sv $(pwd)/.bashrc $HOME
 ln -sv $(pwd)/.config $HOME
-ln -sv $(pwd)/.bc $HOME
 ln -sv $(pwd)/.editorconfig $HOME
-ln -sv $(pwd)/.emoji $HOME
-ln -sv $(pwd)/.eslintrc $HOME
 ln -sv $(pwd)/.generalrc $HOME
-ln -sv $(pwd)/.mozilla $HOME
 ln -sv $(pwd)/.oh-my-zsh $HOME
 ln -sv $(pwd)/.profile $HOME
 ln -sv $(pwd)/.psqlrc $HOME
 ln -sv $(pwd)/.scripts $HOME
-ln -sv $(pwd)/.shortcuts $HOME
 ln -sv $(pwd)/.tmux.conf $HOME
 ln -sv $(pwd)/.vim $HOME
 ln -sv $(pwd)/.vimrc $HOME
-ln -sv $(pwd)/.Xdefaults $HOME
-ln -sv $(pwd)/.xinitrc $HOME
-ln -sv $(pwd)/.xprofile $HOME
-ln -sv $(pwd)/.Xresources $HOME
-ln -sv $(pwd)/.zprofile $HOME
 ln -sv $(pwd)/.zshrc $HOME
-ln -sv $(pwd)/.spacemacs $HOME
-ln -sv $(pwd)/.spacemacs.d $HOME
-ln -sv $(pwd)/readme.mom $HOME/.readme.mom
 
 # Install oh-my-zsh
 (ls ~/.oh-my-zsh 2>/dev/null && mv ~/.oh-my-zsh ~/dotfiles_backup) || echo 'oh-my-zsh directory not backupped'

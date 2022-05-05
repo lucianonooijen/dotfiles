@@ -2,7 +2,7 @@
 
 # Dotfile edit aliasses
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
-alias vvim="v ~/.vimrc"
+alias vvim="v ~/.config/nvim"
 alias reloadrc="source ~/.generalrc"
 
 # Folder aliasses
@@ -16,6 +16,7 @@ alias ....="cd ../../.."
 
 # Shortcuts
 alias c="clear"
+alias vim="nvim" # Always use Neovim
 alias v="nvim"
 alias sv="sudo nvim"
 alias s="sudo"

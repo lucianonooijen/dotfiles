@@ -2,7 +2,7 @@
 .DS_Store
 .oh-my-zsh/
 !.oh-my-zsh/themes/luciano.zsh-theme
-.vim/plugged
+nvim/plugged
 .config/janbar/noson.conf
 .config/.mono/
 .config/configstore/

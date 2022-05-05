@@ -9,7 +9,7 @@ export TERMINAL="st"
 # Set your real browser in $TRUEBROWSER.
 export BROWSER="linkhandler"
 export TRUEBROWSER="firefox"
-export READER="zathura"
+# export READER="zathura"
 export BIB="$HOME/Documents/LaTeX/uni.bib"
 export REFER="$HOME/.referbib"
 export GDK_SCALE=2
@@ -26,6 +26,10 @@ export LESS_TERMCAP_so="$(printf '%b' '[01;36;33m')"; a="${a%_}"
 export LESS_TERMCAP_se="$(printf '%b' '[0m')"; a="${a%_}"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
+
+# Fuzzy file finder
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git --exclude node_modules --follow"
+export FZF_DEFAULT_OPTS="--color=16 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 
 # Other exports
 export FZF_BASE=/usr/bin/fzf

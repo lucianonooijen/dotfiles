@@ -1,93 +1,52 @@
 # vim: filetype=zsh
-# New
-alias cpcd="pwd | xargs -I {} echo 'cd {}' | pbcopy"
-alias ggg="lazygit"
-alias br="broot -hs"
-
-# Shenanigans
-alias rr="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
-alias matrix="cmatrix"
-alias cookie="fortune | cowsay -f sodomized | lolcat"
-alias arch="figlet btw i use arch | lolcat"
-alias bs="bullshit"
-alias aqua="asciiquarium"
-alias clock="tty-clock"
-alias hack="hollywood"
-
-# Arch
-alias b="sudo vim /sys/class/backlight/gmux_backlight/brightness"
-alias bk="sudo vim /sys/class/leds/smc::kbd_backlight/brightness"
-alias sb="sudo bluetoothctl power on && sudo bluetoothctl"
-alias batt="acpi"
-alias gpgexport="gpg --armor --export"
-alias startcups="ssc start cups-browsed.service"
-alias rx="xrdb ~/.Xdefaults" # && xrdb -merge ~/.Xresources
-alias rrc="source ~/.generalrc"
-alias sshfix="eval `ssh-agent -s` ssh-add"
-alias wififix="sudo rfkill unblock all && sudo ip link set wlp4s0 up"
-alias fixbg="feh --bg-fill ~/dotfiles/.config/wall.png"
-alias email="mbsync --all && neomutt && mbsync --all"
-alias pmb="protonmail-bridge"
-alias ys="yay -S"
 
 # Dotfile edit aliasses
-alias vx="v ~/.Xdefaults"
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
-alias vi3="v ~/.config/i3/config"
 alias vvim="v ~/.vimrc"
-alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
-alias vk="v ~/.config/sxhkd/sxhkdrc"
-alias vd="v ~/.scripts/dwm-statusbar/dwmbar"
+alias reloadrc="source ~/.generalrc"
 
 # Folder aliasses
 alias cdh="cd ~"
 alias cdg="cd ~/Git"
 alias cdd="cd ~/dotfiles"
 alias cdc="cd ~/Clients/coolgames"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # Shortcuts
 alias c="clear"
 alias v="nvim"
-alias todo="v ~/todo.md"
-alias please="sudo"
+alias sv="sudo nvim"
 alias s="sudo"
 alias duck="ddgr"
-alias p="pacman"
 alias r="ranger"
-alias sv="sudo nvim"
-alias sp="sudo pacman"
-alias sps="sudo pacman -S"
 alias sr="sudo ranger"
-alias kcall="kubectl get all --all-namespaces"
+alias json="python -mjson.tool"
+alias calc="bc -q"
+
+# Long software names
 alias ap="ansible-playbook"
 alias glr="gitlab-runner"
 alias tf="terraform"
-alias excel="scim"
-alias z="zathura"
-alias ka="killall"
-alias reloadrc="source ~/.generalrc"
-alias mkd="mkdir -pv"
-alias perm="stat -c '%a %n' *"
-alias json="python -mjson.tool"
-alias calc="bc -q"
+alias nb="newsboat"
+alias excel="sc-im"
+alias f="fzf"
 
 # Custom aliasses
 alias myip="curl http://ipecho.net/plain; echo"
 alias record="LC_CTYPE=en_US.UTF-8 asciinema"
 alias sshkey="cat ~/.ssh/id_rsa.pub"
 alias listen="tail -f"
+alias cpcd="pwd | xargs -I {} echo 'cd {}' | pbcopy"
 
 # Adding color
 alias diff="diff --color=auto"
 alias grep="grep --color=auto" # Color grep - highlight desired sequence.
+alias ccat="highlight" # cat alternative, todo: Switch to bat command?
 #alias ls="ls -hN --color=auto --group-directories-first"
 
-# Fancy alternatives to boring bash commands
-alias ccat="highlight"
-alias cccat="source-highlight --out-format=esc256 -o STDOUT -i" # Not working on Arch by default
-
 # Aliasses for exa, an ls alternative
-alias els="exa --group --long --header --git"
 alias l="exa"
 alias la="exa --all"
 alias ll="exa --group --long --header --git --classify"
@@ -96,9 +55,9 @@ alias lll="exa --group --long --header --git --classify --extended"
 alias llla="exa --group --long --header --git --classify --extended --all"
 
 # Internet
-alias yt="youtube-dl --add-metadata -ic" # Download video link
+alias ytv="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
-alias YT="youtube-viewer"
+alias yt="youtube-viewer"
 
 # Yarn
 alias y="yarn"
@@ -106,35 +65,14 @@ alias yi="yarn init"
 alias yc="yarn check && yarn check --integrity && yarn check --verify-tree"
 alias ya="yarn add"
 alias yad="yarn add --dev"
-alias yap="yarn add --peer"
-alias yao="yarn add --optional"
 alias yu="yarn upgrade"
 alias yrm="yarn remove"
-alias yg="yarn global"
-alias yga="yarn global add"
-alias ygl="yarn global list"
-alias ygr="yarb gloval remove"
 alias yr="yarn run"
 alias yrd="yarn run dev"
 alias yrs="yarn run start"
 alias yrb="yarn run build"
-alias yre="yarn run export"
 alias yrl="yarn run lint"
-alias yrlf="yarn run lint --fix"
 alias yrt="yarn run test"
-alias yrtw="yarn run test:watch"
-alias ygenlic="yarn licenses generate-disclaimer"
-
-# Code editor aliasses
-alias ccd="code ."
-
-# Htop
-alias htopcpu="htop --sort-key=PERCENT_CPU"
-alias htopmem="htop --sort-key=PERCENT_MEM"
-
-# System Maintainence
-alias sdn="sudo shutdown now"
-alias psref="gpg-connect-agent RELOADAGENT /bye" # Refresh gpg
 
 # Kubernetes
 alias hm="helm"
@@ -152,15 +90,7 @@ alias kcl="kubectl logs"
 alias kclf="kubectl logs -f"
 alias kcpf="kubectl port-forward"
 alias kcr="kubectl rollout"
-
-# Custom functions
-# function mkdircd() { mkdir $1 && cd $1 }
-
-# Folder navigation
-alias cdh="cd ~"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+alias kcall="kubectl get all --all-namespaces"
 
 # Git
 alias g="git"
@@ -197,6 +127,7 @@ alias gog="git log  --abbrev-commit --name-status --color --graph --pretty=forma
 alias glc="glog -n 1 | awk '{print \$2}'" # Git Last Commit
 alias gml="git log --stat --color --decorate --all --oneline"
 alias gdw="git diff --word-diff=color"
+alias ggg="lazygit"
 
 # Tmux
 alias t="tmux"
@@ -206,18 +137,6 @@ alias ts="tmux new-session -s"
 alias tls="tmux list-sessions"
 alias tksv="tmux kill-server"
 alias tks="tmux kill-session -t"
-
-# Systemctl
-alias sc="systemctl"
-alias scr="systemctl restart"
-alias sce="systemctl enable"
-alias scd="systemctl disable"
-
-# Systemctl with sudo
-alias ssc="sudo systemctl"
-alias sscr="sudo systemctl restart"
-alias ssce="sudo systemctl enable"
-alias sscd="sudo systemctl disable"
 
 # Aliasses for Docker Compose
 alias dco="docker-compose"
@@ -270,30 +189,12 @@ dkclean() {
   docker rm $(docker ps --all -q -f status=exited)
   docker volume rm $(docker volume ls -qf dangling=true)
 }
-dksb() {
-  docker service scale $1=0
-  sleep 2
-  docker service scale $1=$2
-}
-mongo() {
-  mongoLabel=`docker ps | grep mongo | awk '{print $NF}'`
-  docker exec -it $mongoLabel mongo "$@"
-}
-# redis() {
-#   redisLabel=`docker ps | grep redis | awk '{print $NF}'`
-#   docker exec -it $redisLabel redis-cli
-# }
 
 # cURL cheatsheet
 cheat() {
     curl cheat.sh/$1
 }
 
-# Fuzzy file finder
-export FZF_DEFAULT_COMMAND="fd --type f --hidden --exclude .git --exclude node_modules --follow"
-export FZF_DEFAULT_OPTS="--color=16 --preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-
-alias f="fzf"
 vf() {
     v $(f)
 }

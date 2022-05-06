@@ -185,7 +185,7 @@ fonts=(
   font-roboto
   font-clear-sans
 )
-brew cask install ${fonts[@]}
+brew install --cask ${fonts[@]}
 
 echo "Cleaning up Homebrew..."
 brew cleanup

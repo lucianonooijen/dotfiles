@@ -67,15 +67,13 @@ killall Finder
 ###############################################################################
 
 
-echo "Creating an SSH key..."
-ssh-keygen -t rsa -b 4096
-
-echo "Please add this public key to Github"
-echo "https://github.com/account/ssh"
+echo "Please create an SSH key using the following command:"
+echo "  ssh-keygen -t rsa -b 4096 -C \"yourname@domain.com\""
 read -p "Press [Enter] key after this..."
 
 echo "Installing xcode-stuff"
 xcode-select --install
+read -p "Press [Enter] when done..."
 
 ###############################################################################
 # Installations using Homebrew
@@ -105,6 +103,7 @@ brews=(
   ack
   ansible
   bc
+  deno
   docker
   docker-compose
   exa
@@ -112,6 +111,7 @@ brews=(
   ffmpeg
   findutils
   fzf
+  go
   gnupg
   helm
   htop
@@ -134,7 +134,6 @@ brews=(
   the_silver_searcher
   thefuck
   tmux
-  tor
   tree
   wget
   youtube-dl
@@ -163,6 +162,7 @@ casks=(
   signal
   slack
   sublime-text
+  tor-browser
   visual-studio-code
   vlc
   whatsapp

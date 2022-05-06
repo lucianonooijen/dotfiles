@@ -103,6 +103,7 @@ brews=(
   ack
   ansible
   bc
+  deno
   docker
   docker-compose
   exa
@@ -133,7 +134,6 @@ brews=(
   the_silver_searcher
   thefuck
   tmux
-  tor
   tree
   wget
   youtube-dl
@@ -162,6 +162,7 @@ casks=(
   signal
   slack
   sublime-text
+  tor-browser
   visual-studio-code
   vlc
   whatsapp

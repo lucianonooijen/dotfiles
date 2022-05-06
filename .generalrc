@@ -38,6 +38,7 @@ alias f="fzf"
 alias myip="curl http://ipecho.net/plain; echo"
 alias record="LC_CTYPE=en_US.UTF-8 asciinema"
 alias sshkey="cat ~/.ssh/id_rsa.pub"
+alias gpgkey="gpg --list-secret-keys | sed -n "4p" | gpg --armor --export"
 alias listen="tail -f"
 alias cpcd="pwd | xargs -I {} echo 'cd {}' | pbcopy"
 

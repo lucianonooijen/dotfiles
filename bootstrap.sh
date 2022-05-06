@@ -137,13 +137,12 @@ brews=(
   tree
   wget
   youtube-dl
+  zsh
+  zsh-syntax-highlighting
 )
 
 echo "Installing packages with homebrew..."
 brew install ${brews[@]}
-
-echo "Installing cask..."
-brew install homebrew/cask/brew-cask
 
 casks=(
   1password
@@ -167,14 +166,12 @@ casks=(
   vlc
   whatsapp
   zoom
-  zsh
-  zsh-syntax-highlighting
 )
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 echo "installing apps with Cask..."
-brew cask install --appdir="/Applications" ${casks[@]}
+brew install --cask --appdir="/Applications" ${casks[@]}
 
 echo "Installing fonts..."
 brew tap caskroom/fonts

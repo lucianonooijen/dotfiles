@@ -1,3 +1,4 @@
+.idea/
 *.swp
 .DS_Store
 .oh-my-zsh/
@@ -9,6 +10,7 @@ nvim/plugged
 .config/filezilla/
 .config/thefuck/
 .config/yarn/
+.config/deluge
 .config/Code - OSS/
 .config/Slack/
 .config/chromium/

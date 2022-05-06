@@ -8,7 +8,7 @@ alias reloadrc="source ~/.generalrc"
 # Folder aliasses
 alias cdh="cd ~"
 alias cdg="cd ~/Git"
-alias cdd="cd ~/dotfiles"
+alias cdd="cd ~/../luciano/dotfiles"
 alias cdc="cd ~/Clients/coolgames"
 alias ..="cd .."
 alias ...="cd ../.."

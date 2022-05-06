@@ -3,7 +3,7 @@
 # MacOS bootstrapping script
 # Luciano Nooijen
 #
-# Inspiration: 
+# Inspiration:
 # https://gist.github.com/bradp/bea76b16d3325f5c47d4
 # https://gist.github.com/codeinthehole/26b37efa67041e1307db
 # https://github.com/fesja/dotfiles/blob/master/.macos
@@ -102,6 +102,7 @@ echo "Press any key when done..."
 read _
 
 brews=(
+  ack
   ansible
   bc
   docker
@@ -127,11 +128,11 @@ brews=(
   sc-im
   speedtest_cli
   terraform
-  thefuck 
+  the_silver_searcher
+  thefuck
   tmux
   tor
   tree
-  vim
   wget
   youtube-dl
 )

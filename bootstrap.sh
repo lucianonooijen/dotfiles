@@ -102,6 +102,7 @@ read _
 brews=(
   ack
   ansible
+  bat
   bc
   deno
   docker
@@ -114,6 +115,7 @@ brews=(
   go
   gnupg
   helm
+  highlight
   htop
   imagemagick
   jq

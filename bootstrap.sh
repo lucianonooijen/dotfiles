@@ -179,7 +179,6 @@ fonts=(
   font-dejavu
   font-dejavu-sans-mono-for-powerline
   font-dejavu-sans-mono-nerd-font
-  font-inconsolidata
   font-menlo-for-powerline
   font-lato
   font-roboto

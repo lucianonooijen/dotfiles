@@ -243,6 +243,10 @@ call plug#end()
     command! -nargs=? Fold :call   CocAction('fold', <f-args>) " Add `:Fold` command to fold current buffer.
     command! -nargs=0 OR   :call   CocActionAsync('runCommand', 'editor.action.organizeImport') " Add `:OR` command for organize imports of the current buffer.
 
+" Turn off some stuff we don't need
+    let g:loaded_ruby_provider = 0
+    let g:loaded_perl_provider = 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""" FROM LUKE SMITH """""""""""""""""""""""""""
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

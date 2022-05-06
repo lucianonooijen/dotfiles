@@ -17,6 +17,7 @@ nvim/plugged
 .config/libreoffice/
 .config/mpd/
 .config/mutt/
+.config/nvim
 .config/pulse/
 .config/gatsby
 .config/inkscape

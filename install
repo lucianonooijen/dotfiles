@@ -25,7 +25,7 @@ ln -sv $(pwd)/.bashrc $HOME
 ln -sv $(pwd)/.config $HOME
 ln -sv $(pwd)/.editorconfig $HOME
 ln -sv $(pwd)/.generalrc $HOME
-ln -sv $(pwd)/.nvim "$HOME/.config/nvim"
+ln -sv $(pwd)/nvim "$HOME/.config/nvim"
 ln -sv $(pwd)/.oh-my-zsh $HOME
 ln -sv $(pwd)/.profile $HOME
 ln -sv $(pwd)/.psqlrc $HOME

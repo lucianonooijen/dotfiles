@@ -1,6 +1,6 @@
 let mapleader =" "
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " General
 Plug 'editorconfig/editorconfig-vim'

@@ -129,6 +129,7 @@ brews=(
   python3
   sc-im
   speedtest_cli
+  svn
   terraform
   the_silver_searcher
   thefuck

@@ -140,7 +140,7 @@ brews=(
 )
 
 echo "Installing packages with homebrew..."
-brew install ${PACKAGES[@]}
+brew install ${brews[@]}
 
 echo "Installing cask..."
 brew install caskroom/cask/brew-cask

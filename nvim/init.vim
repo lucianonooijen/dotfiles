@@ -117,9 +117,9 @@ call plug#end()
     noremap <Leader>h :set list!<cr>
 
 " Git bindings
-    noremap <Leader>g :Gstatus<cr>
-    noremap <Leader>c :Gcommit<cr>
-    noremap <Leader>b :Gblame<cr>
+    noremap <Leader>g :Git<cr>
+    noremap <Leader>c :Git commit<cr>
+    noremap <Leader>b :Git blame<cr>
     noremap <Leader>d :Gdiff<cr>
 
 " NeoSnippet

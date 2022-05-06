@@ -117,7 +117,9 @@ brews=(
   htop
   imagemagick
   jq
+  k9s
   kubernetes-cli
+  lazydocker
   lazygit
   minikube
   neovim

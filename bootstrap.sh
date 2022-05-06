@@ -174,7 +174,7 @@ echo "installing apps with Cask..."
 brew install --cask --appdir="/Applications" ${casks[@]}
 
 echo "Installing fonts..."
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 fonts=(
   font-dejavu
   font-dejavu-sans-mono-for-powerline

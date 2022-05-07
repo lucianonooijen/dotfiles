@@ -132,6 +132,7 @@ brews=(
   pinentry-mac
   python
   python3
+  ripgrep
   sc-im
   speedtest_cli
   svn

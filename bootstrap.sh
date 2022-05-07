@@ -161,6 +161,7 @@ casks=(
   jetbrains-toolbox
   keka
   libreoffice
+  obs
   insomnia
   iterm2
   spotify

@@ -43,7 +43,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Snippets
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 "Plug 'Shougo/neosnippet'
 "Plug 'Shougo/neosnippet-snippets'
 
@@ -244,6 +244,7 @@ call plug#end()
     command! -nargs=0 OR   :call   CocActionAsync('runCommand', 'editor.action.organizeImport') " Add `:OR` command for organize imports of the current buffer.
 
 " Turn off some stuff we don't need
+    let g:loaded_python3_provider = 0
     let g:loaded_ruby_provider = 0
     let g:loaded_perl_provider = 0
 

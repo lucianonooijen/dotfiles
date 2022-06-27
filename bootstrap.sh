@@ -107,6 +107,7 @@ brews=(
   ansible
   bat
   bc
+  coreutils
   deno
   docker
   docker-compose
@@ -126,6 +127,7 @@ brews=(
   kubernetes-cli
   lazydocker
   lazygit
+  libpq
   minikube
   neovim
   nmap
@@ -161,6 +163,7 @@ casks=(
   jetbrains-toolbox
   keka
   libreoffice
+  openvpn-connect
   insomnia
   iterm2
   spotify

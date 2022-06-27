@@ -1,5 +1,7 @@
 # vim: filetype=zsh
 
+alias psql="/Applications/Postgres.app/Contents/Versions/14/bin/psql"
+
 # Dotfile edit aliasses
 alias vrc="v ~/.generalrc && source ~/.generalrc; clear"
 alias vvim="v ~/.config/nvim/init.vim"
@@ -107,6 +109,7 @@ alias gb="git branch"
 alias gc="git commit -v"
 alias gcm="git commit -m"
 alias gcss="git commit -v -S --signoff"
+alias gcssa='GIT_COMMITTER_DATE="$(date)" git commit -v -S --signoff --date "$(date)" --amend'
 alias gcb="git checkout -b"
 alias gco="git checkout"
 alias gcp="git cherry-pick"

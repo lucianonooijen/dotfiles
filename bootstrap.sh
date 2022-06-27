@@ -134,6 +134,7 @@ brews=(
   pinentry-mac
   python
   python3
+  ripgrep
   sc-im
   speedtest_cli
   svn
@@ -163,6 +164,7 @@ casks=(
   jetbrains-toolbox
   keka
   libreoffice
+  obs
   openvpn-connect
   insomnia
   iterm2

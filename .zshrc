@@ -30,6 +30,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH # Rust/Cargo
 export PATH="$PATH:$(yarn global bin)" # Yarn global packages
 export PATH=$PATH:$(go env GOPATH)/bin # Go binaries
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH" # pg_dump etc. installed via Brew
 
 # Change indicator for vi-mode
 export MODE_INDICATOR="%{$fg_bold[red]%}<< %{$fg[red]%}VIM KEYS ACTIVATED >>%{$reset_color%}"

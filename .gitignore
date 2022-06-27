@@ -28,6 +28,7 @@ nvim/plugged
 .config/mutt
 .config/mutt-wizard
 .config/OpenRCT2/
+.config/pgcli/
 .config/Postman/
 .config/QtProject.conf
 .config/kritadisplayrc

@@ -110,6 +110,7 @@ alias gc="git commit -v"
 alias gcm="git commit -m"
 alias gcss="git commit -v -S --signoff"
 alias gcssa='GIT_COMMITTER_DATE="$(date)" git commit -v -S --signoff --date "$(date)" --amend'
+alias gcssan='GIT_COMMITTER_DATE="$(date)" git commit -v -S --signoff --date "$(date)" --amend --no-edit'
 alias gcb="git checkout -b"
 alias gco="git checkout"
 alias gcp="git cherry-pick"
